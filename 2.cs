@@ -5,6 +5,8 @@ namespace Form
 {
   class Program
   {
+    //  can be called without creating an instance of the Program class.
+    // method does not return any value after execution
     static void Main(string[] args)
     {
       // Create Variables
