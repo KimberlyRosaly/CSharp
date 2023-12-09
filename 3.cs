@@ -1,5 +1,6 @@
 using System;
-
+// NAMESPACE - CONTAINER | USAGE HELPS AVOID NAMING COLLISIONS 
+// Form.Program
 namespace Form
 {
   class Program
@@ -11,6 +12,7 @@ namespace Form
       Console.WriteLine("Hello! Please, input your pet's name.");
       Console.WriteLine("Press [ENTER] key to continue.");
       // CAMELCASE - NAMING CONVENTION FOR VARIABLES
+
       string petsName = Console.ReadLine():
     }
   }
