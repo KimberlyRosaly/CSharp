@@ -11,8 +11,8 @@ namespace Form
     {
       Console.WriteLine("Hello! Please, input your pet's name.");
       Console.WriteLine("Press [ENTER] key to continue.");
-      // CAMELCASE - NAMING CONVENTION FOR VARIABLES
-
+      // camelCase - NAMING CONVENTION FOR VARIABLES, LOCAL VARIABLES, AND PARAMETERS
+      // PascalCase - CLASSES, STRUCTS, ENUMS, AND METHODS
       string petsName = Console.ReadLine():
     }
   }
