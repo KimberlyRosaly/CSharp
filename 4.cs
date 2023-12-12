@@ -3,7 +3,9 @@ namespace Form
 {
   class Program
   {
-
+//  STATIC - CAN CALL METHOD WITHOUT INSTANCE
+//  VOID - METHODCALL DOES NOT RETURN VALUE
+ // FIRST METHOD INVOKED 
     static void Main(string[] args)
 {
         // Ask user for fave number
