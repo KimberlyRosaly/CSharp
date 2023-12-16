@@ -4,7 +4,16 @@
 // convert string input to another data type
 
 // LIST - sequential collection of values - hold references to any type
-List<string> citiesList = new List<string>();
-citiesList.Add("Los Angeles");
-citiesList.Add("New York City");
-citiesList.Add("Dubai");
+
+List<string> options = new List<string>();
+options.Add("[a]");
+options.Add("[b]");
+options.Add("[c]");
+
+// 'FOREACH' LOOP - FOR EACH STRING 
+// ITERATED OVER FROM WITHIN THE 'OPTIONS' LIST
+// EACH STRING IS REFERRED TO AS AN 'OPTION'
+foreach (string option in options)
+{
+    Console.WriteLine(option);
+}
