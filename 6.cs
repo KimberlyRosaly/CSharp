@@ -16,3 +16,6 @@ for (int i = 0; i < options.Count; i++)
     // print to console looped string interpolation
     Console.WriteLine($"{options[i]}");
 }
+
+// create array of strings within object
+string[] menuOptions = { "Option 1", "Option 2", "Option 3", "Exit" };
