@@ -28,6 +28,7 @@ class Program
 
         // C A P T U R E
         // contain user input within a variable
+        // terminate awaiting capture after user hits [ENTER] key
         string userInput = Console.ReadLine();
 
     }
