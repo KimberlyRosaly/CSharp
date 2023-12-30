@@ -16,5 +16,12 @@ class Program
         // PRINT UPDATED LIST
         Console.WriteLine(menu);
 
+        // ASK USER TO CHOOSE AN ENTRY TO REMOVE
+        // CAPTURE USER RESPONSE
+        // SEARCH LIST FOR USER RESPONSE
+        // REMOVE SPECIFIED ENTRY ITEM FROM LIST
+        // PRINT THE NEWLY UPDATED LIST
+        
+
     }
 }
