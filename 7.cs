@@ -17,10 +17,15 @@ class Program
         Console.WriteLine(menu);
 
         // ASK USER TO CHOOSE AN ENTRY TO REMOVE
+        Console.WriteLine("SELECT AN ENTRY TO REMOVE. TYPE IN ENTRY TEXT, FROM LIST, AND SUBMIT WITH [ENTER] KEY.");
         // CAPTURE USER RESPONSE
+        string removalCapturedInput = Console.ReadLine();
         // SEARCH LIST FOR USER RESPONSE
+        menu.Contains(removalCapturedInput);
         // REMOVE SPECIFIED ENTRY ITEM FROM LIST
+        menu.Remove(removalCapturedInput);
         // PRINT THE NEWLY UPDATED LIST
+        Conosole.WriteLine(menu);
         
 
     }
