@@ -25,10 +25,10 @@ class Program
             numericalList.Add(userInput);
         }
 
-        // CREATE LIST WITH RESPONSE
         // CONVERT LIST STRINGS TO INTEGERS
         // SORT VALUES WITHIN LIST
         // PRINT SORTED LIST TO CONSOLE        
+        Console.WriteLine(numericalList);
 
     }
 }
