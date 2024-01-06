@@ -6,7 +6,7 @@ class Program
     {
         // OBJECTIVE : CREATE LOOPY LOGIC TO REQUEST DATA FROM USER
 
-        // [x] (1), (2), (3) | [x] PROMPT USER INSTRUCTIONS | [] AWAIT AND CAPTURE USER RESPONSE
+        // [x] (1), (2), (3) | [x] PROMPT USER INSTRUCTIONS | [x] AWAIT AND CAPTURE USER RESPONSE
 
         // - - - - - - - - - - - - - - L I S T   O F   N U M B E R S
         // EMPTY, INITIALIZED LIST
@@ -17,7 +17,7 @@ class Program
         // post-increment operation : 'i' by '1' after each pass through the loop
         for (int i = 0; i < 3; i++)
         {
-            // string interpolation signaled with: $"{variableName}"
+            // string interpolation signaled with: $"{variableName}" syntax
             Console.WriteLine($"ENTER NUMERICAL VALUE <No. {i+1} of 3> AND PRESS [ENTER]");
 
             string userInput = Console.ReadLine();
@@ -25,10 +25,13 @@ class Program
             numericalList.Add(userInput);
         }
 
-        // CONVERT LIST STRINGS TO INTEGERS
+        // CONVERT LIST STRINGS TO INTEGERS > conversion method will throw error if string != integer or cannot be parsed into one
+        List<int> numericalListOfIntegers = numericalList.ConvertAll(int.Parse);
         // SORT VALUES WITHIN LIST
+        numericalListOfIntegers.Sort();
         // PRINT SORTED LIST TO CONSOLE        
-        Console.WriteLine(numericalList);
+
+        Console.WriteLine(numericalListOfIntegers);
 
     }
 }
