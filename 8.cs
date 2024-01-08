@@ -34,7 +34,12 @@ class Program
         // Console.WriteLine(numericalListOfIntegers); // WILL PRINT OUT TYPE OF OBJECT
 
         // ITERATE OVER EACH ITEM IN THE LIST AND PRINT
-        
+        // foreach (int num in numericalListOfIntegers)
+        // {
+        //     Console.WriteLine(num);
+        // }
+
+        Console.WriteLine(string.Join(", ", numericalListOfIntegers));
 
     }
 }
