@@ -21,12 +21,23 @@ class Program
             Console.WriteLine($"ENTER NUMERICAL VALUE <No. {i+1} of 3> AND PRESS [ENTER]");
 
             string userInput = Console.ReadLine();
-
             numericalList.Add(userInput);
         }
 
-        // CONVERT LIST STRINGS TO INTEGERS > conversion method will throw error if string != integer or cannot be parsed into one
-        List<int> numericalListOfIntegers = numericalList.ConvertAll(int.Parse);
+        
+        List<int> numericalListOfIntegers = new List<int>();
+        foreach (string str in numericalList)
+        {
+            if(int.TryParse(str, out int number))
+            {
+                numericalListOfIntegers.Add(number);
+            }
+            else
+            {
+                Console.WriteLine("UH OH!")
+            }
+        }
+        
         // SORT VALUES WITHIN LIST
         numericalListOfIntegers.Sort();
         // PRINT SORTED LIST TO CONSOLE        
