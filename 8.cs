@@ -9,7 +9,7 @@ class Program
        
 
         // - - - - - - - - - - - - - - L I S T   O F   N U M B E R S
-        // EMPTY, INITIALIZED LIST
+        // EMPTY, INITIALIZED LIST : INSTANCE OF 'list<T>' CLASS
         List<int> numericalList = new List<int> {};
 
         // - - - - - - - - - - - - - - l O O P  3  T I M E S - - - -
@@ -23,21 +23,28 @@ class Program
             // capture user input as a string
             string userInput = Console.ReadLine();
 
+            // 'System' NAMESPACE ACCESS TO 'int.TryParse'
+            // 2 PARAMETERS (STRING TO CONVERT, 'out' KEYWORD 
+            // PARAMETER TO HOLD SUCCESSFUL 'int'EGER CONVERSION 
+            // PASSED IN WITH ARBITRARY VARIABLE DECLARATION REFERENCE 'number'
+            // STORES THE RESULT OF CONVERSION
             if(int.TryParse(userInput, out int number))
             {
+                // SYSTEM NAMESPACE METHOD PROVIDED BY 'List<T>' CLASS
+                // ADD ELEMENT TO THE END OF THE 'list<T>'
                 numericalList.Add(number);
             }
             else
             {
-                Console.WriteLine("ERROR : VALUE IS NOT AN INTEGER : REQUESTS FOR INPUT HAVE BEEN TERMINATED")
+                Console.WriteLine("ERROR : VALUE IS NOT AN INTEGER")
             }
         }        
         
-        // SORT VALUES WITHIN LIST
+        // SORT VALUES WITHIN LIST - ASCENDING ORDER
         numericalList.Sort();
 
 
-        // PRINT SORTED LIST TO CONSOLE
+        // PRINT SORTED LIST TO CONSOLE IN SINGLE LINE WITH COMMA SEPERATED VALUES
         Console.WriteLine(string.Join(", ", numericalList));
 
     }
