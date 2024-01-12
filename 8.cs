@@ -10,7 +10,7 @@ class Program
 
         // - - - - - - - - - - - - - - L I S T   O F   N U M B E R S
         // EMPTY, INITIALIZED LIST : INSTANCE OF 'list<T>' CLASS
-        List<int> numericalList = new List<int> {};
+        List<int> numericalList = new List<int>();
 
         // - - - - - - - - - - - - - - l O O P  3  T I M E S - - - -
         // 'FOR' LOOP : initialization statement, initial value : integer variable declaration 
