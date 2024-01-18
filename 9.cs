@@ -22,11 +22,11 @@ class Program
             */
         // =====================================================
         // CREATE LIST OF PROMPTS
-        List<str> prompts = new List<str>();
+        List<string> prompts = new List<string>();
         // CREATE LIST OF EXAMPLE DATA VALUES
-        List<str> sampleData = new List<str>();
+        List<string> sampleData = new List<string>();
         // CREATE LIST MENU OF ACTIONS 
-        List<str> menu = new List<str>();
+        List<string> menu = new List<string>();
         // =====================================================
 
         // PRINT LIST TO CONSOLE
@@ -39,7 +39,17 @@ class Program
 
         // PERFORM REQUESTED ACTION
             // CREATE SWITCH CASE TO HANDLE CHOICE SELECTION
-
+            // =============================================
+                switch (selection)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+            // =============================================
                 // ADD VALUE TO LIST
                 sampleData.Add(selection);
                 // REMOVE VALUE FROM LIST
