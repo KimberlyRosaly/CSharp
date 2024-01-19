@@ -22,20 +22,24 @@ class Program
             */
         // =====================================================
         // CREATE LIST OF PROMPTS
-        List<string> prompts = new List<string>();
+        List<string> prompts = new List<string> {"TITLE", "INSTRUCTIONS", "DIRECTIONS"};
         // CREATE LIST OF EXAMPLE DATA VALUES
-        List<string> sampleData = new List<string>();
+        List<string> sampleData = new List<string> {"One", "Two", "Three", "4"};
         // CREATE LIST MENU OF ACTIONS 
-        List<string> menu = new List<string>();
+        List<string> menu = new List<string> {"ADD VALUE", "REMOVE VALUE"};
         // =====================================================
 
         // PRINT LIST TO CONSOLE
-        Console.WriteLine(sampleData);
+        Console.WriteLine("DATA : " + string.Join(" | ", sampleData));
         // PRINT MENU OF ACTIONS
-        Console.WriteLine(menu);
+        Console.WriteLine("MENU : " + string.Join(" | ", menu));
 
         // AWAIT USER INPUT
         string userInput = Console.ReadLine();
+
+        // if user input can be parsed into an integer, it will become the 'selection' data
+        if (int.TryParse(userInput, out int selection))
+        {
 
         // PERFORM REQUESTED ACTION
             // CREATE SWITCH CASE TO HANDLE CHOICE SELECTION
@@ -43,17 +47,18 @@ class Program
                 switch (selection)
                 {
                     case 1:
+                        // ADD VALUE TO LIST
+                        sampleData.Add(selection);
                         break;
                     case 2:
+                        // REMOVE VALUE FROM LIST
+                        sampleData.Remove(selection);
                         break;
                     default:
                         break;
                 }
             // =============================================
-                // ADD VALUE TO LIST
-                sampleData.Add(selection);
-                // REMOVE VALUE FROM LIST
-                sampleData.Remove(selection);
+        }
 
         // PRINT MODIFIED LIST TO CONSOLE
         Console.WriteLine(menu);
