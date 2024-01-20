@@ -44,17 +44,23 @@ class Program
         // PERFORM REQUESTED ACTION
             // CREATE SWITCH CASE TO HANDLE CHOICE SELECTION
             // =============================================
+                //  EVALUATE ARGUMENT = EXECUTE BLOCK MATCHING EVALUATION'S VALUE = 'default'ING BLOCK FOR NO MATCHES
                 switch (selection)
                 {
+                    // WHEN THE ARGUMENT EVALUATES TO THIS VALUE, EXECUTE THE CODE BLOCK FOLLOWING
                     case 1:
                         // ADD VALUE TO LIST
                         sampleData.Add(selection);
+                        // BREAK STATEMENT TO SIGNAL TERMINATION OF CODE BLOCK
                         break;
+                    // WHEN THE ARGUMENT EVALUATES TO "2", EXECUTE THE CODE BLOCK FOLLOWING
                     case 2:
                         // REMOVE VALUE FROM LIST
                         sampleData.Remove(selection);
                         break;
                     default:
+                    // PRINT TO THE CONSOLE THE STRING ARGUMENT
+                        Console.WriteLine("ERROR : INVALID INPUT");
                         break;
                 }
             // =============================================
