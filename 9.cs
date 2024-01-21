@@ -67,9 +67,9 @@ class Program
         }
 
         // PRINT MODIFIED LIST TO CONSOLE
-        Console.WriteLine(menu);
+        Console.WriteLine("DATA : " + string.Join(" | ", sampleData));
         // PRINT MENU OF ACTIONS
-        Console.WriteLine(menu);
+        Console.WriteLine("MENU : " + string.Join(" | ", menu));
 
     }
 }
