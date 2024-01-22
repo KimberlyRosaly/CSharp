@@ -19,6 +19,12 @@ class Program
             PLEASE, ENTER DATA BANK SELECTION TO EXECUTE FUNCTION.
             [1] - One | [2] - Two | [3] - Three | [4] - 4
 
+            C O N F I R M A T I O N
+            PLEASE, CONFIRM YOUR SELECTION OR DENY :
+                string interpolation)
+                    "REMOVE '4'"
+            [Y] - CONFIRM | [N] - DENY
+
             */
         // =====================================================
         // CREATE LIST OF PROMPTS
