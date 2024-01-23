@@ -25,10 +25,45 @@ class Program
                     "REMOVE '4'"
             [Y] - CONFIRM | [N] - DENY
 
+
+            IF USER SELECTS [1] - A P P E N D
+                CONFIRM WITH USER - "PLEASE, CONFIRM YOUR SELECTED ACTION"
+                PROMPT KEY INSTRUCTIONS - "APPEND NEW VALUE" "[Y] - CONFIRM | [N] - DENY
+                
+                GET INPUT - Y // N
+
+                IF INPUT = Y - 
+                    PROMPT USER - "APPEND ACTION CONFIRMED" "PLEASE, INPUT THE VALUE YOU WISH TO APPEND. TERMINATE AWAIT WITH [ENTER] KEY"
+                    GET INPUT - "STRING TO COLLECT"
+                    APPEND STRING - DATABANK.APPEND(INPUT)
+                    PRINT MODIFIED LIST TO THE CONSOLE
+                IF INPUT = N - 
+                    PROMPT USER - "FURTHER ACTION DENIED"
+                    END PROGRAM
+           
+            IF USER SELECTS [2] - R E M O V E
+                CONFIRM WITH USER - "PLEASE, CONFIRM YOUR SELECTED ACTION"
+                PROMPT KEY INSTRUCTIONS - "REMOVE EXISTING VALUE" "[Y] - CONFIRM | [N] - DENY"
+                
+                GET INPUT - Y // N
+
+                IF INPUT = Y - 
+                    PROMPT USER - "REMOVE ACTION CONFIRMED" "PLEASE, SELECT THE VALUE YOU WISH TO REMOVE. TERMINATE AWAIT WITH [ENTER] KEY"
+                    GET INPUT - "STRING TO COLLECT"
+                    CONVERT INPUT INTO INTEGER
+                    REMOVE 1 (MATH) FROM INTEGER CONVERSION (TO PURUSE INDICE ASSOCIATION THAT BEGINS AT 0)
+                    SEARCH DATABANK LIST FOR MATCHING INDICE
+                    REMOVE STRING AT SPECIFIED INDEX - DATABANK.REMOVE(INPUTintoINDEX)
+                    PRINT MODIFIED LIST TO THE CONSOLE 
+                IF INPUT = N - 
+                    PROMPT USER - "FURTHER ACTION DENIED"
+                    END PROGRAM
+
+
             */
         // =====================================================
         // CREATE LIST OF PROMPTS
-        List<string> prompts = new List<string> {"TITLE", "INSTRUCTIONS", "DIRECTIONS"};
+        List<string> prompts = new List<string> {"TITLE", "INSTRUCTIONS", "CONFIRMATION"};
         // CREATE LIST OF EXAMPLE DATA VALUES
         List<string> sampleData = new List<string> {"One", "Two", "Three", "4"};
         // CREATE LIST MENU OF ACTIONS 
