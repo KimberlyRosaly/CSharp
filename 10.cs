@@ -10,7 +10,7 @@ class Program
         // =====================================================
         
             // CREATE LIST OF STRINGS CONTAINING PROMPTS
-            List<strings> prompts = new List<strings> {"INTRODUCTION", "QUERY", "INSTRUCTIONS"};
+            List<strings> prompts = new List<strings> {"INTRODUCTION", "QUERY", "INSTRUCTIONS", "OUTRO"};
 
             // CREATE LIST OF SAMPLE DATA VALUES OF STRING
             List<strings> sampleData = new List<strings> {"A", "B", "D"};
@@ -32,12 +32,23 @@ class Program
                 string userInputValue = Console.Readline();
                 // ADD NEW VALUE TO LIST
                 sampleData.Add(userInputValue);
+                // PRINT NEW LIST TO CONSOLE
+                Console.WriteLine(string.join(" | ", sampleData));
             }
-                // PRINT NEW LIST TO MENU
-                // LOOP BACK INTO ASKING THE USER IF THEY WANT TO ADD A VALUE
             // IF USER SAYS [NO]
-                // SAY GOODBYE TO USER
-                // TERMINATE PROGRAM
+            else if (userInputConfirmation == "NO")
+            {
+                // TELL USER THE PROGRAM HAS ENDED
+                Console.WriteLine(prompts[3]);
+            }
+            else
+            {
+                // DISPLAY ERROR MESSAGE
+                Console.WriteLine("ERROR");
+            }
+
+            
+                // LOOP BACK INTO ASKING THE USER IF THEY WANT TO ADD A VALUE
         
     }
 }
