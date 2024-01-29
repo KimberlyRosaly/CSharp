@@ -19,32 +19,37 @@ class Program
             Console.WriteLine(prompts[0]);
             // DISPLAY DATA
             Console.WriteLine(string.Join(" | ", sampleData));
-            // ASK IF USER WOULD LIKE TO ADD A VALUE
-            Console.WriteLine(prompts[1]);
-            // GET USER INPUT AND STORE WITHIN VARIABLE
-            string userInputConfirmation = Console.ReadLine();
-            // IF USER SAYS [YES]
-            if (userInputConfirmation == "YES")
+
+            while (true)
             {
-                //  INSTRUCT USER TO INPUT VALUE
-                Console.WriteLine(prompts[2]);
-                //  STORE USER RESPONSE WITHIN A VARIABLE
-                string userInputValue = Console.ReadLine();
-                // ADD NEW VALUE TO LIST
-                sampleData.Add(userInputValue);
-                // PRINT NEW LIST TO CONSOLE
-                Console.WriteLine(string.Join(" | ", sampleData));
-            }
-            // IF USER SAYS [NO]
-            else if (userInputConfirmation == "NO")
-            {
-                // TELL USER THE PROGRAM HAS ENDED
-                Console.WriteLine(prompts[3]);
-            }
-            else
-            {
-                // DISPLAY ERROR MESSAGE
-                Console.WriteLine("ERROR");
+                // ASK IF USER WOULD LIKE TO ADD A VALUE
+                Console.WriteLine(prompts[1]);
+                // GET USER INPUT AND STORE WITHIN VARIABLE
+                string userInputConfirmation = Console.ReadLine();
+                // IF USER SAYS [YES]
+                if (userInputConfirmation == "YES")
+                {
+                    //  INSTRUCT USER TO INPUT VALUE
+                    Console.WriteLine(prompts[2]);
+                    //  STORE USER RESPONSE WITHIN A VARIABLE
+                    string userInputValue = Console.ReadLine();
+                    // ADD NEW VALUE TO LIST
+                    sampleData.Add(userInputValue);
+                    // PRINT NEW LIST TO CONSOLE
+                    Console.WriteLine(string.Join(" | ", sampleData));
+                }
+                // IF USER SAYS [NO]
+                else if (userInputConfirmation == "NO")
+                {
+                    // TELL USER THE PROGRAM HAS ENDED
+                    Console.WriteLine(prompts[3]);
+                    break;
+                }
+                else
+                {
+                    // DISPLAY ERROR MESSAGE
+                    Console.WriteLine("ERROR");
+                }
             }
 
             
