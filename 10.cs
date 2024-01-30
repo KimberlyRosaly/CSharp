@@ -20,6 +20,9 @@ class Program
             // DISPLAY DATA
             Console.WriteLine(string.Join(" | ", sampleData));
 
+            // LOOP CONSTRUCT : BOOLEAN LITERAL
+            // EXECUTE BLOCK OF CODE AS LONG AS CONDITION LISTED BETWEEN PARENTHESIS REMAINS TRUE
+            // 'true' WILL EXECUTE INDEFINITELY UNTIL EXPLICITLY BROKEN - AKA 'break;' STATEMENT
             while (true)
             {
                 // ASK IF USER WOULD LIKE TO ADD A VALUE
@@ -43,6 +46,7 @@ class Program
                 {
                     // TELL USER THE PROGRAM HAS ENDED
                     Console.WriteLine(prompts[3]);
+                    // EXIT THIS LOOP
                     break;
                 }
                 else
