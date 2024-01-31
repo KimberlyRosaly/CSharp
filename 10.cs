@@ -27,8 +27,8 @@ class Program
             {
                 // ASK IF USER WOULD LIKE TO ADD A VALUE
                 Console.WriteLine(prompts[1]);
-                // GET USER INPUT AND STORE WITHIN VARIABLE
-                string userInputConfirmation = Console.ReadLine();
+                // GET USER INPUT AND STORE WITHIN VARIABLE | REGARDLESS OF CASING, STRING IS CAPITALIZED FOR EASIER COMPARISONS
+                string userInputConfirmation = Console.ReadLine().ToUpper();
                 // IF USER SAYS [YES]
                 if (userInputConfirmation == "YES")
                 {
