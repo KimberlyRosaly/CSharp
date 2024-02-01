@@ -49,10 +49,13 @@ class Program
                     // EXIT THIS LOOP
                     break;
                 }
+                // IF THERE IS AN INVALID INPUT
                 else
                 {
-                    // DISPLAY ERROR MESSAGE
-                    Console.WriteLine("ERROR");
+                    // DISPLAY AN USER INPUT ERROR MESSAGE
+                    Console.WriteLine("PLEASE TYPE IN 'YES' OR 'NO'. ALL OTHER INPUT IS INVALID. PLEASE, TRY AGAIN.");
+                    // GIVE THE USER INSTRUCTIONS AGAIN
+                    Console.WriteLine(prompts[0]);
                 }
             }
 
