@@ -10,7 +10,7 @@ class Program
         // =====================================================
         
             // CREATE LIST OF STRINGS CONTAINING PROMPTS
-            List<string> prompts = new List<string> {"INTRODUCTION", "QUERY", "INSTRUCTIONS", "OUTRO"};
+            List<string> prompts = new List<string> {"WELCOME! VIEW A LIST OF DATA & CHOOSE TO APPEND A STRING VALUE OF YOUR DESIGN!", "WOULD YOU LIKE TO APPEND A VALUE?", "PLEASE, ENTER 'YES' OR 'NO'.", "THANK YOU & GOODBYE!"};
 
             // CREATE LIST OF SAMPLE DATA VALUES OF STRING
             List<string> sampleData = new List<string> {"A", "B", "D"};
