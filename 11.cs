@@ -11,7 +11,10 @@ class Program
         //            USER SELECTS A WORD
         //              AND IS THEN SHOWN IT'S DEFINITION
         // =====================================================
-        // CREATE OBJECT WITH 2 VALUES {"WORD", "DEFINITION"}
+        // ACHIEVE KEY-VALUE PAIRING THROUGH USE OF A DICTIONARY
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        // CREATE AN ENTRY WITH 2 VALUES {"WORD", "DEFINITION"}
+        dictionary.Add("word", "definition")
         // CREATE ANOTHER OBJECT WITH 2 VALUES {"WORD2", "DEFINITION2"}
         // DISPLAY "1. WORD" | "2. WORD"
         // USER INPUTS NUMERICAL VALUE
