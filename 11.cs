@@ -16,6 +16,7 @@ class Program
         // CREATE AN ENTRY WITH 2 VALUES {"WORD", "DEFINITION"}
         dictionary.Add("word", "definition")
         // CREATE ANOTHER OBJECT WITH 2 VALUES {"WORD2", "DEFINITION2"}
+        dictionary.Add("word2", "definition2")
         // DISPLAY "1. WORD" | "2. WORD"
         // USER INPUTS NUMERICAL VALUE
         // FIND MATCHING OBJECT 
