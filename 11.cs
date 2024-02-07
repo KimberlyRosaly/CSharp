@@ -18,8 +18,16 @@ class Program
         // CREATE ANOTHER OBJECT WITH 2 VALUES {"WORD2", "DEFINITION2"}
         dictionary.Add("word2", "definition2")
         // DISPLAY "1. WORD" | "2. WORD"
+        int index = 1;
+        foreach (var entry in dictionary)
+        {
+            Console.WriteLine($"{index}. {entry.Key}");
+            index++;
+        }
         // USER INPUTS NUMERICAL VALUE
+
         // FIND MATCHING OBJECT 
+
         // DISPLAY MATCHING OBJECT "WORD - DEFINITION" | "WORD2 - DEFINITION2"
            
         
