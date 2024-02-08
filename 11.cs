@@ -25,8 +25,17 @@ class Program
             index++;
         }
         // USER INPUTS NUMERICAL VALUE
-
+        string userSelection = Console.ReadLine();
         // FIND MATCHING OBJECT 
+
+            // LOOP THROUGH THE DICTIONARY
+                // IF THE INDEX OF THE ITERATION MATCHES THE USER'S SELECTION
+                    // DISPLAY THE KEY WORD AND THE VALUE DEFINITION
+                // OTHERWISE
+                    // LOOP TO NEXT ENTRY UNTIL ONE IS FOUND
+                // OTHERWISE THERE IS AN ERROR AND NO MATCH IS FOUND
+                    // ASK USER FOR A VALID INPUT
+                    // DISPLAY THE DICTIONARY CHOICES AGAIN
 
         // DISPLAY MATCHING OBJECT "WORD - DEFINITION" | "WORD2 - DEFINITION2"
            
