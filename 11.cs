@@ -29,6 +29,15 @@ class Program
         // FIND MATCHING OBJECT 
 
             // LOOP THROUGH THE DICTIONARY
+            string selectionIndex = 1;
+            foreach (var entry in dictionary)
+            {
+                if (userSelection == selectionIndex)
+                {
+                    Console.WriteLine($"{entry.Key} : {entry.Value}");
+                }
+                selectionIndex++;
+            }
                 // IF THE INDEX OF THE ITERATION MATCHES THE USER'S SELECTION
                     // DISPLAY THE KEY WORD AND THE VALUE DEFINITION
                 // OTHERWISE
