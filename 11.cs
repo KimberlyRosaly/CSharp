@@ -32,7 +32,7 @@ class Program
             string selectionIndex = 1;
             foreach (var entry in dictionary)
             {
-                if (userSelection == selectionIndex)
+                if (userSelection == selectionIndex.ToString())
                 {
                     Console.WriteLine($"{entry.Key} : {entry.Value}");
                 }
