@@ -14,9 +14,9 @@ class Program
         // ACHIEVE KEY-VALUE PAIRING THROUGH USE OF A DICTIONARY
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
         // CREATE AN ENTRY WITH 2 VALUES {"WORD", "DEFINITION"}
-        dictionary.Add("word", "definition")
+        dictionary.Add("word", "definition");
         // CREATE ANOTHER OBJECT WITH 2 VALUES {"WORD2", "DEFINITION2"}
-        dictionary.Add("word2", "definition2")
+        dictionary.Add("word2", "definition2");
         // DISPLAY "1. WORD" | "2. WORD"
         int index = 1;
         foreach (var entry in dictionary)
@@ -29,10 +29,10 @@ class Program
         // FIND MATCHING OBJECT 
 
             // LOOP THROUGH THE DICTIONARY
-            string selectionIndex = 1;
+            int selectionIndex = 1;
             foreach (var entry in dictionary)
             {
-                if (userSelection == selectionIndex.ToString())
+                if (int.Parse(userSelection) == selectionIndex)
                 {
                     Console.WriteLine($"{entry.Key} : {entry.Value}");
                 }
