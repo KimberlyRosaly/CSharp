@@ -35,9 +35,18 @@ class Program
                 if (int.Parse(userSelection) == selectionIndex)
                 {
                     Console.WriteLine($"{entry.Key} : {entry.Value}");
+                    // RETURN STATEMENT EXITS OUT OF THE 'MAIN' FUNCTION COMPLETELY
+                    // SUCCESSFUL MATCH IS DISPLAYED | FUNCTION IS RETURNED
+                    return;
                 }
+                // INCREMENT BY 1
                 selectionIndex++;
             }
+            // IF LOOP DOESN'T RETURN, THE 'MAIN' FUNCTION CONTINUES ON
+            // DISPLAY ERROR MESSAGE STRING TO CONSOLE
+            Console.WriteLine("ERROR : MATCH WITH USER INPUT NOT FOUND");
+
+            
                 // IF THE INDEX OF THE ITERATION MATCHES THE USER'S SELECTION
                     // DISPLAY THE KEY WORD AND THE VALUE DEFINITION
                 // OTHERWISE
