@@ -32,7 +32,8 @@ class Program
             int selectionIndex = 1;
             foreach (var entry in dictionary)
             {
-                if (int.Parse(userSelection) == selectionIndex)
+                // 'TRYPARSE' WILL RETURN A BOOLEAN AND NOT THROW AN EXECEPTION ERROR
+                if (int.TryParse(userSelection) == selectionIndex)
                 {
                     Console.WriteLine($"{entry.Key} : {entry.Value}");
                     // RETURN STATEMENT EXITS OUT OF THE 'MAIN' FUNCTION COMPLETELY
