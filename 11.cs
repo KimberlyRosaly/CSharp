@@ -26,14 +26,20 @@ class Program
         }
         // USER INPUTS NUMERICAL VALUE
         string userSelection = Console.ReadLine();
-        // FIND MATCHING OBJECT 
+        // ==================================================FIND MATCHING OBJECT 
 
-            // LOOP THROUGH THE DICTIONARY
+        // CHECK IF USERS'S INPUT IS A NUMBER - DISPLAY ERROR MESSAGE IF INVALID
+        if (!int.TryParse(userSelection, out int userSelectionInteger))
+        {
+            Console.WriteLine("ERROR : INVALID INPUT - INTEGER INPUT REQUIRED");
+            return;
+        }
+        // ============================================LOOP THROUGH THE DICTIONARY
             int selectionIndex = 1;
             foreach (var entry in dictionary)
             {
                 // 'TRYPARSE' WILL RETURN A BOOLEAN AND NOT THROW AN EXECEPTION ERROR
-                if (int.TryParse(userSelection) == selectionIndex)
+                if (userSelectionInteger == selectionIndex)
                 {
                     Console.WriteLine($"{entry.Key} : {entry.Value}");
                     // RETURN STATEMENT EXITS OUT OF THE 'MAIN' FUNCTION COMPLETELY
