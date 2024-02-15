@@ -9,61 +9,44 @@ class Program
         // OBJECTIVE : CREATE LIST OF VALUES, 
         //              A WORD AND ITS DEFINITION
         //            USER SELECTS A WORD
-        //              AND IS THEN SHOWN IT'S DEFINITION
+        //              AND IS THEN SHOWN ITS DEFINITION
         // =====================================================
-        // ACHIEVE KEY-VALUE PAIRING THROUGH USE OF A DICTIONARY
+        // USAGES : 
+        //      LIST
+        //      DICTIONARY
+        //      FOR EACH LOOP
+        //      IF STATEMENT
+        // =====================================================
+        // =========================================STORE VALUES
+        // INITIALIZE | DECLARE DATATYPES
+        List<string> words = new List<string>();
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
-        // CREATE AN ENTRY WITH 2 VALUES {"WORD", "DEFINITION"}
+        // INSERT SAMPLE DATA VALUES
+        words.Add("word");
+        words.Add("word2");
         dictionary.Add("word", "definition");
-        // CREATE ANOTHER OBJECT WITH 2 VALUES {"WORD2", "DEFINITION2"}
-        dictionary.Add("word2", "definition2");
-        // DISPLAY "1. WORD" | "2. WORD"
+        dictionary.Add("word2", "definition"2);
+        // =====================================================
+        // =======================================DISPLAY VALUES
         int index = 1;
-        foreach (var entry in dictionary)
+        foreach (var word in words)
         {
-            Console.WriteLine($"{index}. {entry.Key}");
+            Console.WriteLine($"[{index}] - {word}");
             index++;
         }
-        // USER INPUTS NUMERICAL VALUE
-        string userSelection = Console.ReadLine();
-        // ==================================================FIND MATCHING OBJECT 
-
-        // CHECK IF USERS'S INPUT IS A NUMBER - DISPLAY ERROR MESSAGE IF INVALID
-        if (!int.TryParse(userSelection, out int userSelectionInteger))
+        // =====================================================
+        // =====================================GET USER REQUEST
+        string selection = Console.ReadLine();
+        // =====================================================
+        // ================================CATCH ERRONEOUS INPUT
+        if (!int.TryParse(selection, out int selectionToInteger))
         {
-            Console.WriteLine("ERROR : INVALID INPUT - INTEGER INPUT REQUIRED");
+            Console.WriteLine("ERROR - INVALID ENTRY - PROGRAM TERMINATING");
             return;
         }
-        // ============================================LOOP THROUGH THE DICTIONARY
-            int selectionIndex = 1;
-            foreach (var entry in dictionary)
-            {
-                // 'TRYPARSE' WILL RETURN A BOOLEAN AND NOT THROW AN EXECEPTION ERROR
-                if (userSelectionInteger == selectionIndex)
-                {
-                    Console.WriteLine($"{entry.Key} : {entry.Value}");
-                    // RETURN STATEMENT EXITS OUT OF THE 'MAIN' FUNCTION COMPLETELY
-                    // SUCCESSFUL MATCH IS DISPLAYED | FUNCTION IS RETURNED
-                    return;
-                }
-                // INCREMENT BY 1
-                selectionIndex++;
-            }
-            // IF LOOP DOESN'T RETURN, THE 'MAIN' FUNCTION CONTINUES ON
-            // DISPLAY ERROR MESSAGE STRING TO CONSOLE
-            Console.WriteLine("ERROR : MATCH WITH USER INPUT NOT FOUND");
-
-            
-                // IF THE INDEX OF THE ITERATION MATCHES THE USER'S SELECTION
-                    // DISPLAY THE KEY WORD AND THE VALUE DEFINITION
-                // OTHERWISE
-                    // LOOP TO NEXT ENTRY UNTIL ONE IS FOUND
-                // OTHERWISE THERE IS AN ERROR AND NO MATCH IS FOUND
-                    // ASK USER FOR A VALID INPUT
-                    // DISPLAY THE DICTIONARY CHOICES AGAIN
-
-        // DISPLAY MATCHING OBJECT "WORD - DEFINITION" | "WORD2 - DEFINITION2"
-           
-        
+        // =====================================================
+        // ===============================DISPLAY MATCHING ENTRY 
+        string selectedWord = words[selectionToInteger - 1];
+        Console.WriteLine($"{selectedWord} : {dictionary[selectedWord]}");
     }
 }
