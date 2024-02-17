@@ -43,7 +43,7 @@ class Program
         string selection = Console.ReadLine();
         // =====================================================
         // ================================CATCH ERRONEOUS INPUT
-        if (!int.TryParse(selection, out int selectionToInteger))
+        if (!int.TryParse(selection, out int selectionToInteger) || selectionToInteger < 1 || selectionToInteger > words.Count)
         {
             Console.WriteLine(prompts["error"]);
             return;
