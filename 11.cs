@@ -39,15 +39,22 @@ class Program
             index++;
         }
         // =====================================================
-        // =====================================GET USER REQUEST
-        string selection = Console.ReadLine();
         // =====================================================
+        // =====================================GET USER REQUEST
         // ================================CATCH ERRONEOUS INPUT
-        if (!int.TryParse(selection, out int selectionToInteger) || selectionToInteger < 1 || selectionToInteger > words.Count)
+        int selectionToInteger;
+        do
         {
-            Console.WriteLine(prompts["error"]);
-            return;
-        }
+            string selection = Console.ReadLine();
+            if (!int.TryParse(selection, out selectionToInteger) || selectionToInteger < 1 || selectionToInteger > words.Count)
+            {
+                Console.WriteLine(prompts["error"]);
+            }
+            else
+            {
+                break;
+            }
+        } while (true);
         // =====================================================
         // ===============================DISPLAY MATCHING ENTRY 
         string selectedWord = words[selectionToInteger - 1];
