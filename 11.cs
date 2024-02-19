@@ -29,7 +29,8 @@ class Program
         dictionary.Add("word2", "definition2");
         prompts.Add("welcome", "USER WELCOME MESSAGE");
         prompts.Add("instructions", "USER, PLEASE ENTER INTEGER AND PRESS [ENTER]");
-        prompts.Add("error", "ERROR - INVALID ENTRY - PROGRAM ENDING");
+        prompts.Add("error - not an integer", "ERROR - INVALID ENTRY - NOT A NUMBER - PLEASE TRY AGAIN");
+        prompts.Add("error - not in range", "ERROR - INVALID ENTRY - ENTRY NOT FOUND - PLEASE TRY AGAIN");
         // =====================================================
         // =======================================DISPLAY VALUES
         int index = 1;
@@ -46,9 +47,13 @@ class Program
         do
         {
             string selection = Console.ReadLine();
-            if (!int.TryParse(selection, out selectionToInteger) || selectionToInteger < 1 || selectionToInteger > words.Count)
+            if (!int.TryParse(selection, out selectionToInteger))
             {
-                Console.WriteLine(prompts["error"]);
+                Console.WriteLine(prompts["error - not an integer"]);
+            }
+            else if (selectionToInteger < 1 || selectionToInteger > words.Count)
+            {
+                Console.WriteLine(prompts["error - not in range"]);
             }
             else
             {
