@@ -9,7 +9,11 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         static void Main(string[] args)
         {
             // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
-            Dictionary<string, Dictionary<string, string>> nestedDictionary = new Dictionary<string, Dictionary<string, string>>();
+            Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
+            {
+                { "Rixin", new Dictionary<string, string> { { "Type", "Cat" }, { "Fur", "Tabby" } } },
+                { "Harley", new Dictionary<string, string> { { "Type", "Cat" }, {"Fur", "Black" } } }
+            };
 
         }
     }
