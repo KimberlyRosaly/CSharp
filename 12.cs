@@ -15,6 +15,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "Harley", new Dictionary<string, string> { { "Type", "Cat" }, {"Fur", "Black" } } }
             };
 
+            Console.WriteLine($"PETS ENTRY 1: NAME - RIXIN - PET TYPE - {pets["Rixin"]["Type"]} - FUR TYPE - {pets["Rixin"]["Fur"]}");
+
         }
     }
 }
