@@ -15,7 +15,16 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "Harley", new Dictionary<string, string> { { "Type", "Cat" }, {"Fur", "Black" } } }
             };
 
-            Console.WriteLine($"PETS ENTRY 1: NAME - RIXIN - PET TYPE - {pets["Rixin"]["Type"]} - FUR TYPE - {pets["Rixin"]["Fur"]}");
+            foreach (var pet in pets)
+            {
+                string name = pet.Key;
+                Dictionary<string, string> petAttributes = pet.Value;
+                string type = petAttributes["Type"];
+                string fur = petAttributes["Fur"];
+                
+                Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
+            }
+
 
         }
     }
