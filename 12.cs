@@ -18,14 +18,19 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 {
     class Program
     {
+        // USE CONSTANTS TO KEEP CODE MORE EASILY MAINTAINABLE BY ONLY HAVING ONE SPOT TO CHANGE | LESS PRONE TO ERRORS
+        const string TYPE = "Type";
+        const string FUR = "Fur";
+
         static void Main(string[] args)
         {
             // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
+            // NAME = DICTIONARY KEY | DICTIONARY'S KEY'S VALUE OUTPUTS ANOTHER DICTIONARY OF KEY VALUE PAIRS
             Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
             {
-                { "Rixin", new Dictionary<string, string> { { "Type", "Cat" }, { "Fur", "Tabby" } } },
-                { "Harley", new Dictionary<string, string> { { "Type", "Cat" }, {"Fur", "Black" } } },
-                { "Lexy", new Dictionary<string, string> { { "Type", "Dog" }, {"Fur", "Black and Brown" } } }
+                { "Rixin", new Dictionary<string, string> { { TYPE, "Cat" }, { FUR, "Tabby" } } },
+                { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
+                { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
             };
 
             // =======================================DISPLAY ALL PETS
@@ -33,30 +38,30 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             {
                 string name = pet.Key;
                 Dictionary<string, string> petAttributes = pet.Value;
-                string type = petAttributes["Type"];
-                string fur = petAttributes["Fur"];
+                string type = petAttributes[TYPE];
+                string fur = petAttributes[FUR];
                 
                 Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
             // =======================================DISPLAY ALL CATS
-            var cats = pets.Where(pet => pet.Value["Type"] == "Cat");
+            var cats = pets.Where(pet => pet.Value[TYPE] == "Cat");
             foreach (var cat in cats)
             {
                 string name = cat.Key;
                 Dictionary<string, string> catAttributes = cat.Value;
-                string type = catAttributes["Type"];
-                string fur = catAttributes["Fur"];
+                string type = catAttributes[TYPE];
+                string fur = catAttributes[FUR];
 
                 Console.WriteLine($"P E T - C A T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
             // =======================================DISPLAY ALL DOGS
-            var dogs = pets.Where(pet => pet.Value["Type"] == "Dog");
+            var dogs = pets.Where(pet => pet.Value[TYPE] == "Dog");
             foreach (var dog in dogs)
             {
                 string name = dog.Key;
                 Dictionary<string, string> dogAttributes = dog.Value;
-                string type = dogAttributes["Type"];
-                string fur = dogAttributes["Fur"];
+                string type = dogAttributes[TYPE];
+                string fur = dogAttributes[FUR];
 
                 Console.WriteLine($" P E T - D O G : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
