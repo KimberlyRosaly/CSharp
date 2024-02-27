@@ -47,7 +47,18 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 string type = catAttributes["Type"];
                 string fur = catAttributes["Fur"];
 
-                Console.WriteLine($"P E T - C A T : NAME -{name} - PET TYPE - {type} - FUR TYPE - {fur}");
+                Console.WriteLine($"P E T - C A T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
+            };
+            // =======================================DISPLAY ALL DOGS
+            var dogs = pets.Where(pet => pet.Value["Type"] == "Dog");
+            foreach (var dog in dogs)
+            {
+                string name = dog.Key;
+                Dictionary<string, string> dogAttributes = dog.Value;
+                string type = dogAttributes["Type"];
+                string fur = dogAttributes["Fur"];
+
+                Console.WriteLine($" P E T - D O G : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
 
 
