@@ -33,6 +33,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
             };
 
+            // =======================================COUNT ALL PETS & DISPLAY
+            int petsCount = pets.Count;
+            Console.WriteLine($"TOTAL NUMBER OF  P E T  ENTRIES - {petsCount}");
             // =======================================DISPLAY ALL PETS
             foreach (var pet in pets)
             {
