@@ -36,6 +36,18 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             // =======================================COUNT ALL PETS & DISPLAY
             int petsCount = pets.Count;
             Console.WriteLine($"TOTAL NUMBER OF  P E T  ENTRIES - {petsCount}");
+            // =======================================ORDER PETS BY NAME ALPHABETICALLY
+            var petsByName = pets.OrderBy(pet => pet.Key);
+            foreach (var pet in petsByName)
+            {
+                // DEFINE WHAT THE DICTIONARY KEYS ARE - AND MAKE IT ACCESSIBLE
+                string name = pet.Key;
+                Dictionary<string, string> petAttributes = pet.Value;
+                string type = petAttributes[TYPE];
+                string fur = petAttributes[FUR];
+
+                Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
+            }
             // =======================================DISPLAY ALL PETS
             foreach (var pet in pets)
             {
