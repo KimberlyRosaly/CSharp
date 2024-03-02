@@ -80,6 +80,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
                 Console.WriteLine($" P E T - D O G : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
+            // =======================================CHECK IF ANY BIRDS
+            bool birds = pets.Any(pet => pet.Value[TYPE] == "Bird");
+            Console.WriteLine($"P E T S - EXISTENCE OF 'BIRD' ENTRIES ? {birds}");
 
 
         }
