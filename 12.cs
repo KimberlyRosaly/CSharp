@@ -32,7 +32,19 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
                 { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
             };
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ====================== CREATE MENU FOR USER TO ACCESS DICTIONARY DATA
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
+        // WELCOME USER
+        // DESCRIBE PROGRAM
+        // PROVIDE INSTRUCTIONS
+        // AWAIT USER INPUT
+        // VALIDATE USER INPUT
+        // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+        
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
             // =======================================COUNT ALL PETS & DISPLAY
             int petsCount = pets.Count;
             Console.WriteLine($"TOTAL NUMBER OF  P E T  ENTRIES - {petsCount}");
