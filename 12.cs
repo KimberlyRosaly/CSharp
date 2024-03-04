@@ -38,6 +38,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
         // WELCOME USER
+        Console.WriteLine(prompts["welcome"]);
+        // CREATE PROMPT DICTIONARY
+        Dictionary<string, string> prompts = new Dictionary<string, string>();
         // DESCRIBE PROGRAM
         // PROVIDE INSTRUCTIONS
         // AWAIT USER INPUT
