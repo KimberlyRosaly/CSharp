@@ -32,15 +32,17 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
                 { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
             };
+            // CREATE PROMPT DICTIONARY
+            Dictionary<string, string> prompts = new Dictionary<string, string>()
+            {
+                { "welcome message", "WELCOME, USER!" }
+            };
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // ====================== CREATE MENU FOR USER TO ACCESS DICTIONARY DATA
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-
         // WELCOME USER
         Console.WriteLine(prompts["welcome"]);
-        // CREATE PROMPT DICTIONARY
-        Dictionary<string, string> prompts = new Dictionary<string, string>();
         // DESCRIBE PROGRAM
         // PROVIDE INSTRUCTIONS
         // AWAIT USER INPUT
