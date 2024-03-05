@@ -35,7 +35,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             // CREATE PROMPT DICTIONARY
             Dictionary<string, string> prompts = new Dictionary<string, string>()
             {
-                { "welcome message", "WELCOME, USER!" }
+                { "welcome message", "WELCOME, USER!" },
+                { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
+                { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
             };
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -44,7 +46,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         // WELCOME USER
         Console.WriteLine(prompts["welcome"]);
         // DESCRIBE PROGRAM
+        Console.WriteLine(prompts["program description"]);
         // PROVIDE INSTRUCTIONS
+        Console.WriteLine(prompts["user instructions"]);
         // AWAIT USER INPUT
         // VALIDATE USER INPUT
         // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
