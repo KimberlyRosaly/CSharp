@@ -50,7 +50,10 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         // PROVIDE INSTRUCTIONS
         Console.WriteLine(prompts["user instructions"]);
         // AWAIT USER INPUT
+        string userInput = Console.ReadLine();
         // VALIDATE USER INPUT
+        int userInputToNumber;
+        bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
         // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
         
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
