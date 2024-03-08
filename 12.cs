@@ -39,6 +39,11 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
                 { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
             };
+            // CREATE MENU OF USER ACTIONS
+            // 1 - ASK FOR COUNT OF ALL PETS WITHIN DATABASE
+            // 2 - ASK FOR INDEX OF ALL PETS
+            // 3 - ASK FOR ALL CATS
+            // 4 - ASK FOR ALL DOGS
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // ====================== CREATE MENU FOR USER TO ACCESS DICTIONARY DATA
@@ -55,6 +60,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         int userInputToNumber;
         bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
         // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+        // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
         
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
             // =======================================COUNT ALL PETS & DISPLAY
