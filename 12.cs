@@ -61,6 +61,27 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
         // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
         // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+        if (userInputToNumberSuccess)
+        {
+            case 1:
+                // COUNT PETS METHOD
+                break;
+            case 2:
+                // PETS INDEX METHOD
+                break;
+            case 3:
+                // DISPLAY CATS METHOD
+                break;
+            case 4:
+                // DISPLAY DOGS METHOD
+                break;
+            case 5:
+                // END THE PROGRAM
+                break;
+            default:
+                // ERROR MESSAGE
+                break;
+        }
         
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
             // =======================================COUNT ALL PETS & DISPLAY
