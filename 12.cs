@@ -39,6 +39,12 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
                 { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
             };
+            // CREATE ERROR MESSAGES
+            Dictionary<string, string> errors = new Dictionary<string, string>()
+            {
+                { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
+                { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
+            };
             // CREATE MENU OF USER ACTIONS
             // 1 - ASK FOR COUNT OF ALL PETS WITHIN DATABASE
             // 2 - ASK FOR INDEX OF ALL PETS
