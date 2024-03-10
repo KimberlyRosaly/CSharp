@@ -85,7 +85,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 // END THE PROGRAM
                 break;
             default:
-                // ERROR MESSAGE
+                // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                Console.WriteLine(errors["input not in range"]);
                 break;
         }
         
