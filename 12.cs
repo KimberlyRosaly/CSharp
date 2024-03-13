@@ -35,7 +35,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
         static void PetsIndex()
         {
-            // =======================================DISPLAY ALL PETS
+            // ===============================================DISPLAY ALL PETS
             foreach (var pet in pets)
             {
                 string name = pet.Key;
@@ -49,7 +49,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
         static void CatsDisplay()
         {
-            // =======================================DISPLAY ALL CATS
+            // ================================================DISPLAY ALL CATS
             var cats = pets.Where(pet => pet.Value[TYPE] == "Cat");
             foreach (var cat in cats)
             {
@@ -64,7 +64,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
         static void DogsDisplay()
         {
-            // =======================================DISPLAY ALL DOGS
+            // ================================================DISPLAY ALL DOGS
             var dogs = pets.Where(pet => pet.Value[TYPE] == "Dog");
             foreach (var dog in dogs)
             {
@@ -79,14 +79,14 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
         static void BirdsCheck()
         {
-            // =======================================CHECK IF ANY BIRDS
+            // ==============================================CHECK IF ANY BIRDS
             bool birds = pets.Any(pet => pet.Value[TYPE] == "Bird");
             Console.WriteLine($"P E T S - EXISTENCE OF 'BIRD' ENTRIES ? {birds}");
         };
 
         static void PetsByName()
         {
-            // =======================================ORDER PETS BY NAME ALPHABETICALLY
+            // ================================ORDER PETS BY NAME ALPHABETICALLY
             var petsByName = pets.OrderBy(pet => pet.Key);
             foreach (var pet in petsByName)
             {
@@ -122,6 +122,19 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
                 { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
             };
+            // MENU - LIST OF USER ACTIONS
+            Dictionary<string, string> menu = new Dictionary<string, string>
+            {
+                { "options", 
+                    string.Join("\n", @"
+                    [1] - DISPLAY TOTAL NUMBER COUNT OF ALL PET ENTRIES IN DATABASE
+                    [2] - DISPLAY ALL PET ENTRIES
+                    [3] - DISPLAY ALL CAT ENTRIES
+                    [4] - DISPLAY ALL DOG ENTRIES
+                    [5] - CHECK IF ANY BIRDS EXIST IN DATABASE".Split('\n').Select(line => line.Trim()))
+                }
+            };
+
             // ERROR MESSAGES
             Dictionary<string, string> errors = new Dictionary<string, string>()
             {
@@ -130,20 +143,16 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             };
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // ============================= MENU FOR USER TO ACCESS DICTIONARY DATA
+        // ================================== OUTPUT TO CONSOLE | ACTUAL PROGRAM
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // WELCOME USER
-        Console.WriteLine(prompts["welcome"]);
+        Console.WriteLine(prompts["welcome message"]);
         // DESCRIBE PROGRAM
         Console.WriteLine(prompts["program description"]);
         // PROVIDE INSTRUCTIONS
         Console.WriteLine(prompts["user instructions"]);
-            // CREATE MENU OF USER ACTIONS
-            // 1 - ASK FOR COUNT OF ALL PETS WITHIN DATABASE
-            // 2 - ASK FOR INDEX OF ALL PETS
-            // 3 - ASK FOR ALL CATS
-            // 4 - ASK FOR ALL DOGS
-
+        // DISPLAY NUMBERED MENU OF ACTIONS
+        Console.WriteLine(menu["options"]);
         // AWAIT USER INPUT
         string userInput = Console.ReadLine();
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
