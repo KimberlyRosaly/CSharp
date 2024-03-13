@@ -22,6 +22,10 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         const string TYPE = "Type";
         const string FUR = "Fur";
 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ===================== METHODS FOR GRABBING ONTO DATA IN SPECIFIC WAYS
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         static void PetsCount()
         {
             // =======================================COUNT ALL PETS & DISPLAY
@@ -79,77 +83,9 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             bool birds = pets.Any(pet => pet.Value[TYPE] == "Bird");
             Console.WriteLine($"P E T S - EXISTENCE OF 'BIRD' ENTRIES ? {birds}");
         };
-        
 
-        static void Main(string[] args)
+        static void PetsByName()
         {
-            // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
-            // NAME = DICTIONARY KEY | DICTIONARY'S KEY'S VALUE OUTPUTS ANOTHER DICTIONARY OF KEY VALUE PAIRS
-            Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
-            {
-                { "Rixin", new Dictionary<string, string> { { TYPE, "Cat" }, { FUR, "Tabby" } } },
-                { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
-                { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
-            };
-            // CREATE PROMPT DICTIONARY
-            Dictionary<string, string> prompts = new Dictionary<string, string>()
-            {
-                { "welcome message", "WELCOME, USER!" },
-                { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
-                { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
-            };
-            // CREATE ERROR MESSAGES
-            Dictionary<string, string> errors = new Dictionary<string, string>()
-            {
-                { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
-                { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
-            };
-            // CREATE MENU OF USER ACTIONS
-            // 1 - ASK FOR COUNT OF ALL PETS WITHIN DATABASE
-            // 2 - ASK FOR INDEX OF ALL PETS
-            // 3 - ASK FOR ALL CATS
-            // 4 - ASK FOR ALL DOGS
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // ====================== CREATE MENU FOR USER TO ACCESS DICTIONARY DATA
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // WELCOME USER
-        Console.WriteLine(prompts["welcome"]);
-        // DESCRIBE PROGRAM
-        Console.WriteLine(prompts["program description"]);
-        // PROVIDE INSTRUCTIONS
-        Console.WriteLine(prompts["user instructions"]);
-        // AWAIT USER INPUT
-        string userInput = Console.ReadLine();
-        // VALIDATE USER INPUT
-        int userInputToNumber;
-        bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
-        // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
-        // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
-        if (userInputToNumberSuccess)
-        {
-            case 1:
-                // COUNT PETS METHOD
-                break;
-            case 2:
-                // PETS INDEX METHOD
-                break;
-            case 3:
-                // DISPLAY CATS METHOD
-                break;
-            case 4:
-                // DISPLAY DOGS METHOD
-                break;
-            case 5:
-                // END THE PROGRAM
-                break;
-            default:
-                // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
-                Console.WriteLine(errors["input not in range"]);
-                break;
-        }
-        
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
             // =======================================ORDER PETS BY NAME ALPHABETICALLY
             var petsByName = pets.OrderBy(pet => pet.Key);
             foreach (var pet in petsByName)
@@ -162,6 +98,89 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
                 Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             }
+
+        };
+        
+        static void Main(string[] args)
+        {
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ======================= DICTIONARIES TO HOLD DATA TO DISPLAY LATER ON
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
+            // NAME = DICTIONARY KEY | DICTIONARY'S KEY'S VALUE OUTPUTS ANOTHER DICTIONARY OF KEY VALUE PAIRS
+            Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
+            {
+                { "Rixin", new Dictionary<string, string> { { TYPE, "Cat" }, { FUR, "Tabby" } } },
+                { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
+                { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
+            };
+            // PROMPTS
+            Dictionary<string, string> prompts = new Dictionary<string, string>()
+            {
+                { "welcome message", "WELCOME, USER!" },
+                { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
+                { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
+            };
+            // ERROR MESSAGES
+            Dictionary<string, string> errors = new Dictionary<string, string>()
+            {
+                { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
+                { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
+            };
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ============================= MENU FOR USER TO ACCESS DICTIONARY DATA
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // WELCOME USER
+        Console.WriteLine(prompts["welcome"]);
+        // DESCRIBE PROGRAM
+        Console.WriteLine(prompts["program description"]);
+        // PROVIDE INSTRUCTIONS
+        Console.WriteLine(prompts["user instructions"]);
+            // CREATE MENU OF USER ACTIONS
+            // 1 - ASK FOR COUNT OF ALL PETS WITHIN DATABASE
+            // 2 - ASK FOR INDEX OF ALL PETS
+            // 3 - ASK FOR ALL CATS
+            // 4 - ASK FOR ALL DOGS
+
+        // AWAIT USER INPUT
+        string userInput = Console.ReadLine();
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // VALIDATE USER INPUT
+        int userInputToNumber;
+        bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
+        // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+        // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+        if (userInputToNumberSuccess)
+        {
+            case 1:
+                // COUNT PETS METHOD
+                PetsCount();
+                break;
+            case 2:
+                // DISPLAY ALL PETS
+                PetsIndex();
+                break;
+            case 3:
+                // DISPLAY CATS METHOD
+                CatsDisplay();
+                break;
+            case 4:
+                // DISPLAY DOGS METHOD
+                DogsDisplay();
+                break;
+            case 5:
+                // END THE PROGRAM
+                break;
+            default:
+                // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                Console.WriteLine(errors["input not in range"]);
+                break;
+        }
+        
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
 
 
