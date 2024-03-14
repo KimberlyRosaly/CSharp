@@ -158,35 +158,41 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // VALIDATE USER INPUT
+        // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
         int userInputToNumber;
+        // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
         bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
         // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
         // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+        // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
         if (userInputToNumberSuccess)
         {
-            case 1:
-                // COUNT PETS METHOD
-                PetsCount();
-                break;
-            case 2:
-                // DISPLAY ALL PETS
-                PetsIndex();
-                break;
-            case 3:
-                // DISPLAY CATS METHOD
-                CatsDisplay();
-                break;
-            case 4:
-                // DISPLAY DOGS METHOD
-                DogsDisplay();
-                break;
-            case 5:
-                // END THE PROGRAM
-                break;
-            default:
-                // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
-                Console.WriteLine(errors["input not in range"]);
-                break;
+            switch (userInputToNumber)
+            {
+                case 1:
+                    // COUNT PETS METHOD
+                    PetsCount();
+                    break;
+                case 2:
+                    // DISPLAY ALL PETS
+                    PetsIndex();
+                    break;
+                case 3:
+                    // DISPLAY CATS METHOD
+                    CatsDisplay();
+                    break;
+                case 4:
+                    // DISPLAY DOGS METHOD
+                    DogsDisplay();
+                    break;
+                case 5:
+                    // END THE PROGRAM
+                    break;
+                default:
+                    // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                    Console.WriteLine(errors["input not in range"]);
+                    break;
+            }
         }
         
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
