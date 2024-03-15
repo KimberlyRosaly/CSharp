@@ -23,6 +23,44 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         const string FUR = "Fur";
 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ======================= DICTIONARIES TO HOLD DATA TO DISPLAY LATER ON
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // 'static' > KEYWORD > MEMBER BELONGS TO CLASS & SHARED AMONG ALL INSTANCES
+        // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
+        // NAME = DICTIONARY KEY | DICTIONARY'S KEY'S VALUE OUTPUTS ANOTHER DICTIONARY OF KEY VALUE PAIRS
+        static Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
+        {
+            { "Rixin", new Dictionary<string, string> { { TYPE, "Cat" }, { FUR, "Tabby" } } },
+            { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
+            { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
+         };
+        // PROMPTS
+        static Dictionary<string, string> prompts = new Dictionary<string, string>()
+        {
+            { "welcome message", "WELCOME, USER!" },
+            { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
+            { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
+        };
+        // MENU - LIST OF USER ACTIONS > MULTILINE STRING
+        //  USE NEW LINES AND VERBATIM STRING LITERAL WITH WHITESPACE TRIMMING > FOR CODE READABILITY
+        static Dictionary<string, string> menu = new Dictionary<string, string>
+        {
+            { "options", 
+                string.Join("\n", @"
+                    [1] - DISPLAY TOTAL NUMBER COUNT OF ALL PET ENTRIES IN DATABASE
+                    [2] - DISPLAY ALL PET ENTRIES
+                    [3] - DISPLAY ALL CAT ENTRIES
+                    [4] - DISPLAY ALL DOG ENTRIES
+                    [5] - CHECK IF ANY BIRDS EXIST IN DATABASE".Split('\n').Select(line => line.Trim()))
+            }
+        };
+        // ERROR MESSAGES
+        static Dictionary<string, string> errors = new Dictionary<string, string>()
+        {
+            { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
+            { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
+        };
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // ===================== METHODS FOR GRABBING ONTO DATA IN SPECIFIC WAYS
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -31,7 +69,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             // =======================================COUNT ALL PETS & DISPLAY
             int petsCount = pets.Count;
             Console.WriteLine($"TOTAL NUMBER OF  P E T  ENTRIES - {petsCount}");
-        };
+        }
 
         static void PetsIndex()
         {
@@ -45,7 +83,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 
                 Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             }
-        };
+        }
 
         static void CatsDisplay()
         {
@@ -60,7 +98,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
                 Console.WriteLine($"P E T - C A T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };            
-        };
+        }
 
         static void DogsDisplay()
         {
@@ -75,14 +113,14 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
                 Console.WriteLine($" P E T - D O G : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             };
-        };
+        }
 
         static void BirdsCheck()
         {
             // ==============================================CHECK IF ANY BIRDS
             bool birds = pets.Any(pet => pet.Value[TYPE] == "Bird");
             Console.WriteLine($"P E T S - EXISTENCE OF 'BIRD' ENTRIES ? {birds}");
-        };
+        }
 
         static void PetsByName()
         {
@@ -99,51 +137,15 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             }
 
-        };
-        
+        }
+        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        // -*_*_*_*_*_*B E G I N   A C T U A L   C O D E*_*_*_*_*_*_*_*_*_*_*_*_
+        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         static void Main(string[] args)
         {
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // ======================= DICTIONARIES TO HOLD DATA TO DISPLAY LATER ON
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-            // NESTED DICTIONARY - A DICTIONARY (KEY) THAT HAS A VALUE OF ANOTHER DICTIONARY
-            // NAME = DICTIONARY KEY | DICTIONARY'S KEY'S VALUE OUTPUTS ANOTHER DICTIONARY OF KEY VALUE PAIRS
-            Dictionary<string, Dictionary<string, string>> pets = new Dictionary<string, Dictionary<string, string>>()
-            {
-                { "Rixin", new Dictionary<string, string> { { TYPE, "Cat" }, { FUR, "Tabby" } } },
-                { "Harley", new Dictionary<string, string> { { TYPE, "Cat" }, {FUR, "Black" } } },
-                { "Lexy", new Dictionary<string, string> { { TYPE, "Dog" }, {FUR, "Black and Brown" } } }
-            };
-            // PROMPTS
-            Dictionary<string, string> prompts = new Dictionary<string, string>()
-            {
-                { "welcome message", "WELCOME, USER!" },
-                { "program description", "THIS PROGRAM WILL LIST PETS AND THEIR INFORMATION FROM WITHIN A DICTIONARY DATABASE."},
-                { "user instructions", "PLEASE, SELECT AN OPTION FROM THE MENU, INPUTTING THE INTEGER, THEN PRESSING [ENTER] ON YOUR KEYBOARD."}
-            };
-            // MENU - LIST OF USER ACTIONS
-            Dictionary<string, string> menu = new Dictionary<string, string>
-            {
-                { "options", 
-                    string.Join("\n", @"
-                    [1] - DISPLAY TOTAL NUMBER COUNT OF ALL PET ENTRIES IN DATABASE
-                    [2] - DISPLAY ALL PET ENTRIES
-                    [3] - DISPLAY ALL CAT ENTRIES
-                    [4] - DISPLAY ALL DOG ENTRIES
-                    [5] - CHECK IF ANY BIRDS EXIST IN DATABASE".Split('\n').Select(line => line.Trim()))
-                }
-            };
-
-            // ERROR MESSAGES
-            Dictionary<string, string> errors = new Dictionary<string, string>()
-            {
-                { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
-                { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
-            };
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // ================================== OUTPUT TO CONSOLE | ACTUAL PROGRAM
+        // ================================== OUTPUT TO CONSOLE | P R O G R A M
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // WELCOME USER
         Console.WriteLine(prompts["welcome message"]);
