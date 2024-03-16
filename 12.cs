@@ -188,6 +188,10 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                     DogsDisplay();
                     break;
                 case 5:
+                    // CHECK IF BIRDS EXIST IN DATABASE
+                    BirdsCheck();
+                    break;
+                case 6:
                     // END THE PROGRAM
                     break;
                 default:
