@@ -51,7 +51,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                     [2] - DISPLAY ALL PET ENTRIES
                     [3] - DISPLAY ALL CAT ENTRIES
                     [4] - DISPLAY ALL DOG ENTRIES
-                    [5] - CHECK IF ANY BIRDS EXIST IN DATABASE".Split('\n').Select(line => line.Trim()))
+                    [5] - CHECK IF ANY BIRDS EXIST IN DATABASE
+                    [6] - E X I T  P R O G R A M".Split('\n').Select(line => line.Trim()))
             }
         };
         // ERROR MESSAGES
@@ -193,6 +194,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                     break;
                 case 6:
                     // END THE PROGRAM
+                    Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !")
                     break;
                 default:
                     // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
