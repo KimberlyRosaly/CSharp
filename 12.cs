@@ -154,52 +154,62 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         Console.WriteLine(prompts["program description"]);
         // PROVIDE INSTRUCTIONS
         Console.WriteLine(prompts["user instructions"]);
-        // DISPLAY NUMBERED MENU OF ACTIONS
-        Console.WriteLine(menu["options"]);
-        // AWAIT USER INPUT
-        string userInput = Console.ReadLine();
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // =========================================================DISPLAY MENU
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // VALIDATE USER INPUT
-        // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
-        int userInputToNumber;
-        // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
-        bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
-        // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
-        // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
-        // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
-        if (userInputToNumberSuccess)
+        // BEGIN A LOOP TO DISPLAY THE MENU, ALLOW USER TO MAKE A SELECTION, OUTPUT ACCORDINGLY, THEN BEGIN AGAIN
+        // BOOLEAN - FLAG - RUNNING THE PROGRAM STAYS TRUE UNTIL VARIABLE IS REDEFINED TO FALSEY VALUE
+        bool runMenuLoop = true;
+        while (runMenuLoop)
         {
-            switch (userInputToNumber)
+            // DISPLAY NUMBERED MENU OF ACTIONS
+            Console.WriteLine(menu["options"]);
+            // AWAIT USER INPUT
+            string userInput = Console.ReadLine();
+            // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // VALIDATE USER INPUT
+            // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
+            int userInputToNumber;
+            // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
+            bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
+            // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+            // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+            // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
+            if (userInputToNumberSuccess)
             {
-                case 1:
-                    // COUNT PETS METHOD
-                    PetsCount();
-                    break;
-                case 2:
-                    // DISPLAY ALL PETS
-                    PetsIndex();
-                    break;
-                case 3:
-                    // DISPLAY CATS METHOD
-                    CatsDisplay();
-                    break;
-                case 4:
-                    // DISPLAY DOGS METHOD
-                    DogsDisplay();
-                    break;
-                case 5:
-                    // CHECK IF BIRDS EXIST IN DATABASE
-                    BirdsCheck();
-                    break;
-                case 6:
-                    // END THE PROGRAM
-                    Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !")
-                    break;
-                default:
-                    // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
-                    Console.WriteLine(errors["input not in range"]);
-                    break;
+                switch (userInputToNumber)
+                {
+                    case 1:
+                        // COUNT PETS METHOD
+                        PetsCount();
+                        break;
+                    case 2:
+                        // DISPLAY ALL PETS
+                        PetsIndex();
+                        break;
+                    case 3:
+                        // DISPLAY CATS METHOD
+                        CatsDisplay();
+                        break;
+                    case 4:
+                        // DISPLAY DOGS METHOD
+                        DogsDisplay();
+                        break;
+                    case 5:
+                        // CHECK IF BIRDS EXIST IN DATABASE
+                        BirdsCheck();
+                        break;
+                    case 6:
+                        // END THE PROGRAM
+                        Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
+                        runMenuLoop = false;
+                        break;
+                    default:
+                        // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                        Console.WriteLine(errors["input not in range"]);
+                        break;
+                }
             }
         }
         
