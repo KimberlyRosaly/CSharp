@@ -86,34 +86,17 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             }
         }
 
-        static void CatsDisplay()
+        static void PetsFindAndDisplay(string petType)
         {
-            // ================================================DISPLAY ALL CATS
-            var cats = pets.Where(pet => pet.Value[TYPE] == "Cat");
-            foreach (var cat in cats)
+            var petsOfType = pets.Where(pet => pet.Value[TYPE] == petType);
+            foreach (var pet in petsOfType)
             {
-                string name = cat.Key;
-                Dictionary<string, string> catAttributes = cat.Value;
-                string type = catAttributes[TYPE];
-                string fur = catAttributes[FUR];
-
-                Console.WriteLine($"P E T - C A T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
-            };            
-        }
-
-        static void DogsDisplay()
-        {
-            // ================================================DISPLAY ALL DOGS
-            var dogs = pets.Where(pet => pet.Value[TYPE] == "Dog");
-            foreach (var dog in dogs)
-            {
-                string name = dog.Key;
-                Dictionary<string, string> dogAttributes = dog.Value;
-                string type = dogAttributes[TYPE];
-                string fur = dogAttributes[FUR];
-
-                Console.WriteLine($" P E T - D O G : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
-            };
+                string name = pet.Key;
+                Dictionary<string, string> petAttributes = pet.Value;
+                string type = petAttributes[TYPE];
+                string fur = petAttributes[FUR];
+                Console.WriteLine($"P E T - {petType.ToUpper()} : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
+            }
         }
 
         static void BirdsCheck()
@@ -190,11 +173,11 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         break;
                     case 3:
                         // DISPLAY CATS METHOD
-                        CatsDisplay();
+                        PetsFindAndDisplay("Cat");
                         break;
                     case 4:
                         // DISPLAY DOGS METHOD
-                        DogsDisplay();
+                        PetsFindAndDisplay("Dog");
                         break;
                     case 5:
                         // CHECK IF BIRDS EXIST IN DATABASE
