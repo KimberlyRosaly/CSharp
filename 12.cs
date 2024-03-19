@@ -75,15 +75,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
         static void PetsIndex()
         {
             // ===============================================DISPLAY ALL PETS
-            foreach (var pet in pets)
-            {
-                string name = pet.Key;
-                Dictionary<string, string> petAttributes = pet.Value;
-                string type = petAttributes[TYPE];
-                string fur = petAttributes[FUR];
-                
-                Console.WriteLine($"P E T : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
-            }
+            // =========================================BY NAME ALPHABETICALLY
+           PetsByName();
         }
 
         static void PetsFindAndDisplay(string petType)
