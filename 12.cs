@@ -52,7 +52,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                     [3] - DISPLAY ALL CAT ENTRIES
                     [4] - DISPLAY ALL DOG ENTRIES
                     [5] - CHECK IF ANY BIRDS EXIST IN DATABASE
-                    [6] - E X I T  P R O G R A M".Split('\n').Select(line => line.Trim()))
+                    [6] - REQUEST CUSTOM SPECIES CHECK IN DATABASE
+                    [7] - E X I T  P R O G R A M".Split('\n').Select(line => line.Trim()))
             }
         };
         // ERROR MESSAGES
@@ -177,6 +178,17 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         BirdsCheck();
                         break;
                     case 6:
+                    // ==========================================
+                        // ALLOW USER TO CHECK FOR ANY PET TYPE
+                    // (1) USER SELECTS '6'
+                    // (2) DISPLAY STRING OF INSTRUCTIONS TO CONSOLE - "INPUT REQUESTED SPECIES + PRESS [ENTER]"
+                    // (3) AWAIT USER INPUT
+                    // (4) SAVE USER INPUT
+                    // (5) NORMALIZE INPUT AND SAVE
+                    // (6) ITERATE THROUGH PETS 'TYPE' TO FIND MATCHING STRING
+                    // (7) OUTPUT RESULTS TO CONSOLE
+                        break;
+                    case 7:
                         // END THE PROGRAM
                         Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
                         runMenuLoop = false;
