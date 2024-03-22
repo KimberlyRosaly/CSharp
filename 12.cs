@@ -182,11 +182,18 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         // ALLOW USER TO CHECK FOR ANY PET TYPE
                     // (1) USER SELECTS '6'
                     // (2) DISPLAY STRING OF INSTRUCTIONS TO CONSOLE - "INPUT REQUESTED SPECIES + PRESS [ENTER]"
+                    Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY")
                     // (3) AWAIT USER INPUT
                     // (4) SAVE USER INPUT
+                    string userInputSpecies = Console.ReadLine();
                     // (5) NORMALIZE INPUT AND SAVE
+                        // CHECK FOR INPUT THAT IS NOT A STRING - ALPHA REQUIREMENT
+                        // CAPITALIZE FIRST CHARACTER + SAVE
                     // (6) ITERATE THROUGH PETS 'TYPE' TO FIND MATCHING STRING
+                        // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
+                        // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA 
                     // (7) OUTPUT RESULTS TO CONSOLE
+                    Console.WriteLine(results)
                         break;
                     case 7:
                         // END THE PROGRAM
