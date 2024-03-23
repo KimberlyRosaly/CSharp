@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 // USING DIRECTIVE
-using System.Linq;
+using System.Linq; // FOR SEARCHY THINGS
+using System.Globalization; // FOR TEXTY & TITLECASING THINGS
 
         // =====================================================
         // OBJECTIVE : EXPLORE LINQ
@@ -182,18 +183,19 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         // ALLOW USER TO CHECK FOR ANY PET TYPE
                     // (1) USER SELECTS '6'
                     // (2) DISPLAY STRING OF INSTRUCTIONS TO CONSOLE - "INPUT REQUESTED SPECIES + PRESS [ENTER]"
-                    Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY")
-                    // (3) AWAIT USER INPUT
-                    // (4) SAVE USER INPUT
-                    string userInputSpecies = Console.ReadLine();
+                        Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY")
+                    // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
+                        string userInputSpecies = Console.ReadLine();
                     // (5) NORMALIZE INPUT AND SAVE
-                        // CHECK FOR INPUT THAT IS NOT A STRING - ALPHA REQUIREMENT
                         // CAPITALIZE FIRST CHARACTER + SAVE
+                        // EXTRA STUFF NEEDED TO BE IMPORTED IN ORDER TO CALL ON TEXTY METHODS
+                        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                        string userInputSpeciesNormalized = textInfo.ToTitleCase(userInputSpecies.ToLower());
                     // (6) ITERATE THROUGH PETS 'TYPE' TO FIND MATCHING STRING
                         // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
                         // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA 
                     // (7) OUTPUT RESULTS TO CONSOLE
-                    Console.WriteLine(results)
+                        Console.WriteLine(results)
                         break;
                     case 7:
                         // END THE PROGRAM
