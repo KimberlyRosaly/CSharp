@@ -191,7 +191,8 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         // EXTRA STUFF NEEDED TO BE IMPORTED IN ORDER TO CALL ON TEXTY METHODS
                         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                         string userInputSpeciesNormalized = textInfo.ToTitleCase(userInputSpecies.ToLower());
-                    // (6) ITERATE THROUGH PETS 'TYPE' TO FIND MATCHING STRING
+                    // (6) SEARCH THROUGH PETS 'TYPE' TO FIND MATCHING STRING USING LINQ
+                    var speciesFound = pets.Where(pet => pet.Value[TYPE] == userInputSpeciesNormlized);
                         // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
                         // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA 
                     // (7) OUTPUT RESULTS TO CONSOLE
