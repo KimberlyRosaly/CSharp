@@ -117,6 +117,40 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             }
 
         }
+
+        static void PetsSearch(string petType)
+        {
+            // "NORMALIZE" INPUT AND SAVE
+            // CAPITALIZE FIRST CHARACTER + SAVE
+            // EXTRA STUFF NEEDED TO BE IMPORTED IN ORDER TO CALL ON TEXTY METHODS
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            string userInputSpeciesNormalized = textInfo.ToTitleCase(userInputSpecies.ToLower());
+            // SEARCH THROUGH PETS 'TYPE' TO FIND MATCHING STRING USING LINQ
+            var speciesFound = pets.Where(pet => pet.Value[TYPE] == userInputSpeciesNormalized)
+            // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
+            if (speciesFound.Any())
+            {
+                Console.WriteLine($"P E T S - EXISTENCE OF '{userInputSpeciesNormalized}}' ENTRIES ? {speciesFound.Any()}");
+                PetsFindAndDisplay(speciesFound)
+            }
+            else
+            {  
+                Console.WriteLine(" SORRY - NO MATCHING PETS OF THAT SPECIES FOUND");
+            }
+            break;
+
+
+
+            var petsOfType = pets.Where(pet => pet.Value[TYPE] == petType);
+            foreach (var pet in petsOfType)
+            {
+                string name = pet.Key;
+                Dictionary<string, string> petAttributes = pet.Value;
+                string type = petAttributes[TYPE];
+                string fur = petAttributes[FUR];
+                Console.WriteLine($"P E T - {petType.ToUpper()} : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
+            }
+        }
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
         // -*_*_*_*_*_*B E G I N   A C T U A L   C O D E*_*_*_*_*_*_*_*_*_*_*_*_
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -186,27 +220,7 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
                     // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
                         string userInputSpecies = Console.ReadLine();
-                    // (5) NORMALIZE INPUT AND SAVE
-                        // CAPITALIZE FIRST CHARACTER + SAVE
-                        // EXTRA STUFF NEEDED TO BE IMPORTED IN ORDER TO CALL ON TEXTY METHODS
-                        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                        string userInputSpeciesNormalized = textInfo.ToTitleCase(userInputSpecies.ToLower());
-                    // (6) SEARCH THROUGH PETS 'TYPE' TO FIND MATCHING STRING USING LINQ
-                    var speciesFound = pets.Where(pet => pet.Value[TYPE] == userInputSpeciesNormlized);
-                        // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
-                    if (speciesFound.Any())
-                    {
-                        Console.WriteLine($"P E T S - EXISTENCE OF '{userInputSpeciesNormalized}}' ENTRIES ? {speciesFound.Any()}");
-                        foreach (var pet in speciesFound)
-                        {
-                            Console.WriteLine($"P E T - NAME - {pet.Value[name]} - PET TYPE - {pet.Value[TYPE]} - FUR TYPE - {pet.Value[FUR]}");   
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine(" SORRY - NO MATCHING PETS OF THAT SPECIES FOUND");
-                    }
-                    break;
+                        PetsSearch(userInputSpecies);                   
                         // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA 
                     // (7) OUTPUT RESULTS TO CONSOLE
                         Console.WriteLine(results)
