@@ -118,37 +118,24 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
 
         }
 
-        static void PetsSearch(string petType)
+        static void PetsSearch(string userInputSpecies)
         {
             // "NORMALIZE" INPUT AND SAVE
-            // CAPITALIZE FIRST CHARACTER + SAVE
-            // EXTRA STUFF NEEDED TO BE IMPORTED IN ORDER TO CALL ON TEXTY METHODS
+            // INITIALIZE IMPORTED FUNCTIONALITY FOLLOWING CONVENTIONS - 
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            // CAPITALIZE FIRST CHARACTER + SAVE
             string userInputSpeciesNormalized = textInfo.ToTitleCase(userInputSpecies.ToLower());
             // SEARCH THROUGH PETS 'TYPE' TO FIND MATCHING STRING USING LINQ
-            var speciesFound = pets.Where(pet => pet.Value[TYPE] == userInputSpeciesNormalized)
+            var speciesFound = pets.Where(pet => pet.Value[TYPE] == userInputSpeciesNormalized);
             // IF INPUT IS NOT FOUND - RETURN BOOLEAN = FALSE | "NO MATCHING ENTRIES FOUND"
             if (speciesFound.Any())
             {
-                Console.WriteLine($"P E T S - EXISTENCE OF '{userInputSpeciesNormalized}}' ENTRIES ? {speciesFound.Any()}");
-                PetsFindAndDisplay(speciesFound)
+                Console.WriteLine($"P E T S - EXISTENCE OF '{userInputSpecies}' ENTRIES ? {speciesFound.Any()}");
+                PetsFindAndDisplay(userInputSpeciesNormalized);
             }
             else
             {  
                 Console.WriteLine(" SORRY - NO MATCHING PETS OF THAT SPECIES FOUND");
-            }
-            break;
-
-
-
-            var petsOfType = pets.Where(pet => pet.Value[TYPE] == petType);
-            foreach (var pet in petsOfType)
-            {
-                string name = pet.Key;
-                Dictionary<string, string> petAttributes = pet.Value;
-                string type = petAttributes[TYPE];
-                string fur = petAttributes[FUR];
-                Console.WriteLine($"P E T - {petType.ToUpper()} : NAME - {name} - PET TYPE - {type} - FUR TYPE - {fur}");
             }
         }
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -213,17 +200,13 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                         BirdsCheck();
                         break;
                     case 6:
-                    // ==========================================
+                        // ==========================================
                         // ALLOW USER TO CHECK FOR ANY PET TYPE
-                    // (1) USER SELECTS '6'
-                    // (2) DISPLAY STRING OF INSTRUCTIONS TO CONSOLE - "INPUT REQUESTED SPECIES + PRESS [ENTER]"
                         Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
-                    // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
+                        // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
                         string userInputSpecies = Console.ReadLine();
+                        // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA - DISPLAY RESULTS TO CONSOLE
                         PetsSearch(userInputSpecies);                   
-                        // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA 
-                    // (7) OUTPUT RESULTS TO CONSOLE
-                        Console.WriteLine(results)
                         break;
                     case 7:
                         // END THE PROGRAM
