@@ -9,13 +9,15 @@ using System.Globalization; // FOR TEXTY & TITLECASING THINGS
         //      SEARCH THROUGH DATA FOR VALUE MATCHES
         // =====================================================
         // DEFINE
-        //      LINQ
-        //      
+        //      LINQ :
+        //      set of technologies based on the integration of
+        //      query capabilities directly into the C# language
         // =====================================================
 
 // KEYWORD - USED TO DEFINE A NAMESPACE
 // NAMESPACE : PROVIDES SCOPE FOR IDENTIFIERS WITHIN : USED TO ORGANIZE CODE INTO LOGICAL GROUPS
-namespace NamespaceExample // ANY VALID IDENTIFIER
+// GROUP RELATED CODE TO AVOID NAMING COLLISIONS BETWEEN DIFFERENT PARTS OF A PROGRAM
+namespace PetsDatabaseAndAccess // ANY VALID IDENTIFIER
 {
     class Program
     {
@@ -63,7 +65,6 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
             { "invalid input", "ERROR: INVALID ENTRY! NUMERICAL INPUT REQUIRED!" },
             { "input not in range", "ERROR: INVALID ENTRY! NUMERICAL INPUT NOT WITHIN MENU RANGE!" }
         };
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         // ===================== METHODS FOR GRABBING ONTO DATA IN SPECIFIC WAYS
         // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -138,93 +139,85 @@ namespace NamespaceExample // ANY VALID IDENTIFIER
                 Console.WriteLine(" SORRY - NO MATCHING PETS OF THAT SPECIES FOUND");
             }
         }
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // -*_*_*_*_*_*B E G I N   A C T U A L   C O D E*_*_*_*_*_*_*_*_*_*_*_*_
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+        // ======================================================= P R O G R A M
+        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         static void Main(string[] args)
         {
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // ================================== OUTPUT TO CONSOLE | P R O G R A M
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // WELCOME USER
-        Console.WriteLine(prompts["welcome message"]);
-        // DESCRIBE PROGRAM
-        Console.WriteLine(prompts["program description"]);
-        // PROVIDE INSTRUCTIONS
-        Console.WriteLine(prompts["user instructions"]);
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // =========================================================DISPLAY MENU
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-        // BEGIN A LOOP TO DISPLAY THE MENU, ALLOW USER TO MAKE A SELECTION, OUTPUT ACCORDINGLY, THEN BEGIN AGAIN
-        // BOOLEAN - FLAG - RUNNING THE PROGRAM STAYS TRUE UNTIL VARIABLE IS REDEFINED TO FALSEY VALUE
-        bool runMenuLoop = true;
-        while (runMenuLoop)
-        {
-            // DISPLAY NUMBERED MENU OF ACTIONS
-            Console.WriteLine(menu["options"]);
-            // AWAIT USER INPUT
-            string userInput = Console.ReadLine();
             // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // =================================================== OUTPUT TO CONSOLE
             // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-            // VALIDATE USER INPUT
-            // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
-            int userInputToNumber;
-            // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
-            bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
-            // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
-            // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
-            // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
-            if (userInputToNumberSuccess)
+            // WELCOME USER
+            Console.WriteLine(prompts["welcome message"]);
+            // DESCRIBE PROGRAM
+            Console.WriteLine(prompts["program description"]);
+            // PROVIDE INSTRUCTIONS
+            Console.WriteLine(prompts["user instructions"]);
+            // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // =========================================================DISPLAY MENU
+            // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+            // BEGIN A LOOP TO DISPLAY THE MENU, ALLOW USER TO MAKE A SELECTION, OUTPUT ACCORDINGLY, THEN BEGIN AGAIN
+            // BOOLEAN - FLAG - RUNNING THE PROGRAM STAYS TRUE UNTIL VARIABLE IS REDEFINED TO FALSEY VALUE
+            bool runMenuLoop = true;
+            while (runMenuLoop)
             {
-                switch (userInputToNumber)
+                // DISPLAY NUMBERED MENU OF ACTIONS
+                Console.WriteLine(menu["options"]);
+                // AWAIT USER INPUT
+                string userInput = Console.ReadLine();
+                // VALIDATE USER INPUT
+                // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
+                int userInputToNumber;
+                // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
+                bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
+                // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+                // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+                // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
+                if (userInputToNumberSuccess)
                 {
-                    case 1:
-                        // COUNT PETS METHOD
-                        PetsCount();
-                        break;
-                    case 2:
-                        // DISPLAY ALL PETS
-                        PetsIndex();
-                        break;
-                    case 3:
-                        // DISPLAY CATS METHOD
-                        PetsFindAndDisplay("Cat");
-                        break;
-                    case 4:
-                        // DISPLAY DOGS METHOD
-                        PetsFindAndDisplay("Dog");
-                        break;
-                    case 5:
-                        // CHECK IF BIRDS EXIST IN DATABASE
-                        BirdsCheck();
-                        break;
-                    case 6:
-                        // ==========================================
-                        // ALLOW USER TO CHECK FOR ANY PET TYPE
-                        Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
-                        // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
-                        string userInputSpecies = Console.ReadLine();
-                        // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA - DISPLAY RESULTS TO CONSOLE
-                        PetsSearch(userInputSpecies);                   
-                        break;
-                    case 7:
-                        // END THE PROGRAM
-                        Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
-                        runMenuLoop = false;
-                        break;
-                    default:
-                        // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
-                        Console.WriteLine(errors["input not in range"]);
-                        break;
+                    switch (userInputToNumber)
+                    {
+                        case 1:
+                            // COUNT PETS METHOD
+                            PetsCount();
+                            break;
+                        case 2:
+                            // DISPLAY ALL PETS
+                            PetsIndex();
+                            break;
+                        case 3:
+                            // DISPLAY CATS METHOD
+                            PetsFindAndDisplay("Cat");
+                            break;
+                        case 4:
+                            // DISPLAY DOGS METHOD
+                            PetsFindAndDisplay("Dog");
+                            break;
+                        case 5:
+                            // CHECK IF BIRDS EXIST IN DATABASE
+                            BirdsCheck();
+                            break;
+                        case 6:
+                            // ALLOW USER TO CHECK FOR ANY PET TYPE
+                            Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
+                            // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
+                            string userInputSpecies = Console.ReadLine();
+                            // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA - DISPLAY RESULTS TO CONSOLE
+                            PetsSearch(userInputSpecies);                   
+                            break;
+                        case 7:
+                            // END THE PROGRAM
+                            Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
+                            runMenuLoop = false;
+                            break;
+                        default:
+                            // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                            Console.WriteLine(errors["input not in range"]);
+                            break;
+                    }
                 }
             }
-        }
-        
-        // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-
-
-
         }
     }
 }
