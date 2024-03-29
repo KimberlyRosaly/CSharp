@@ -166,56 +166,68 @@ namespace PetsDatabaseAndAccess // ANY VALID IDENTIFIER
                 Console.WriteLine(menu["options"]);
                 // AWAIT USER INPUT
                 string userInput = Console.ReadLine();
-                // VALIDATE USER INPUT
-                // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
-                int userInputToNumber;
-                // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
-                bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
-                // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
-                // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
-                // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
-                if (userInputToNumberSuccess)
+
+                /**
+                * ! V A L I D A T E   U S E R   I N P U T
+                * ! USE 'TRY/CATCH' BLOCK 
+                * ! CATCH UNEXPECTED ERROR, GENERICALLY
+                */
+                try
                 {
-                    switch (userInputToNumber)
+                    // DECLARE AN INTEGER VARIABLE THAT SHOULD STORE THE USER'S INPUT AS A NUMBER
+                    int userInputToNumber;
+                    // INITIALIZE A BOOLEAN TO RUN TRUE OR FALSE - IF THE USER'S STRING INPUT CAN BE PARSED AND OUTPUTTED INTO A NUMBER
+                    bool userInputToNumberSuccess = int.TryParse(userInput, out userInputToNumber);
+                    // RUN DIFFERENT LOOPS DEPENDENT ON USER CHOICE
+                    // CREATE A SWITCH STATEMENT TO HANDLE USER'S DESIRED OUTPUT
+                    // IF THE USER'S STRING INPUT CAN BE CONVERTED INTO AN INTEGER > TRUE
+                    if (userInputToNumberSuccess)
                     {
-                        case 1:
-                            // COUNT PETS METHOD
-                            PetsCount();
-                            break;
-                        case 2:
-                            // DISPLAY ALL PETS
-                            PetsIndex();
-                            break;
-                        case 3:
-                            // DISPLAY CATS METHOD
-                            PetsFindAndDisplay("Cat");
-                            break;
-                        case 4:
-                            // DISPLAY DOGS METHOD
-                            PetsFindAndDisplay("Dog");
-                            break;
-                        case 5:
-                            // CHECK IF BIRDS EXIST IN DATABASE
-                            BirdsCheck();
-                            break;
-                        case 6:
-                            // ALLOW USER TO CHECK FOR ANY PET TYPE
-                            Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
-                            // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
-                            string userInputSpecies = Console.ReadLine();
-                            // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA - DISPLAY RESULTS TO CONSOLE
-                            PetsSearch(userInputSpecies);                   
-                            break;
-                        case 7:
-                            // END THE PROGRAM
-                            Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
-                            runMenuLoop = false;
-                            break;
-                        default:
-                            // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
-                            Console.WriteLine(errors["input not in range"]);
-                            break;
+                        switch (userInputToNumber)
+                        {
+                            case 1:
+                                // COUNT PETS METHOD
+                                PetsCount();
+                                break;
+                            case 2:
+                                // DISPLAY ALL PETS
+                                PetsIndex();
+                                break;
+                            case 3:
+                                // DISPLAY CATS METHOD
+                                PetsFindAndDisplay("Cat");
+                                break;
+                            case 4:
+                                // DISPLAY DOGS METHOD
+                                PetsFindAndDisplay("Dog");
+                                break;
+                            case 5:
+                                // CHECK IF BIRDS EXIST IN DATABASE
+                                BirdsCheck();
+                                break;
+                            case 6:
+                                // ALLOW USER TO CHECK FOR ANY PET TYPE
+                                Console.WriteLine("ENTER A SPECIES TO QUERY DATABASE - THEN PRESS THE [ENTER] KEY");
+                                // (3) AWAIT USER INPUT  (4) SAVE USER INPUT
+                                string userInputSpecies = Console.ReadLine();
+                                // IF INPUT IS FOUND - PARSE AND INTERPOLATE DATA - DISPLAY RESULTS TO CONSOLE
+                                PetsSearch(userInputSpecies);                   
+                                break;
+                            case 7:
+                                // END THE PROGRAM
+                                Console.WriteLine("YOU HAVE CHOSEN TO EXIT THE PROGRAM - G O O D B Y E !");
+                                runMenuLoop = false;
+                                break;
+                            default:
+                                // ERROR MESSAGE - IF THE USER INPUT IS NOT ON THE MENU'S NUMBER RANGE
+                                Console.WriteLine(errors["input not in range"]);
+                                break;
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"ERROR - {ex.Message}");
                 }
             }
         }
