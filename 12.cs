@@ -224,9 +224,15 @@ namespace PetsDatabaseAndAccess // ANY VALID IDENTIFIER
                                 break;
                         }
                     }
+                    else
+                    {
+                        // ERROR MESSAGE - IF THE USER INPUT IS NOT A NUMBER
+                        Console.WriteLine(errors["invalid input"]);
+                    }
                 }
                 catch (Exception ex)
                 {
+                    // HANDLE ERRORS OUTSIDE OF EXPECTED EDGE CASES
                     Console.WriteLine($"ERROR - {ex.Message}");
                 }
             }
