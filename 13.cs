@@ -31,3 +31,25 @@
        // MAKE SKELETON BREATHE
     // ELSE LIVING PET CONTINUES TO BREATHE
 
+//! + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+// 'using' > KEYWORD > DIRECTIVE TO IMPORT NAMESPACES > GROUPS OF RELATED 'TYPES'
+// 'System' > ROOT NAMESPACE > FUNDAMENTAL & BASE CLASSES
+using System;
+using System.Timers;
+
+class Program
+{
+    // 'static' > KEYWORD FOR BELONGING TO THE 'Program' CLASS ITSELF AND NOT INSTANCE
+    // 'void' > RETURN TYPE > SIGNIFY THAT METHOD DOES NOT RETURN A VALUE
+    // 'main' > CONVENTIONAL METHOD NAME > 1ST TO GET CALLED > APPLICATION ENTRY POINT
+    // '(string[] args)' > METHOD PARAMETERS PASSED IN WHEN APPLICATION STARTS 
+    //      TAKE IN AN ARRAY OF STRINGS OF COMMAND-LINE ARGUMENTS
+    static void Main(string[] args)
+    {
+        // INITIALIZE A TIMER TO BE TRIGGERED EVERY 1 SECOND
+        // CLASS | STORED REFERENCE | INITIALIZATION OF INSTANCE | ARGUMENT FOR CONSTRUCTOR
+        Timer timer = new Timer(1000);
+    }
+}
+//! + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+
