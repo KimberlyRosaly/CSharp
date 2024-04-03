@@ -49,6 +49,23 @@ class Program
         // INITIALIZE A TIMER TO BE TRIGGERED EVERY 1 SECOND
         // CLASS | STORED REFERENCE | INITIALIZATION OF INSTANCE | ARGUMENT FOR CONSTRUCTOR
         Timer timer = new Timer(1000);
+        // TOGGLE FRAMES WITH BOOLEAN AND SET IT'S DEFAULT VALUE TO BE FALSEY
+        bool toggle = false;
+
+        // SET TO ADD > THEN REDEFINE > PASS IN EVENT HANDLER
+        timer.Elapsed += (sender, e) =>
+        {
+            // CLEAR CONSOLE FOR A BLANK SLATE TO WORK WITH
+            Console.Clear();
+            // TERNARY - IF TOGGLE IS TRUTHY, DISPLAY LARGER FRAME, OTHERWISE DISPLAY SMALLER FRAME
+            Console.WriteLine(toggle ? petInhale : petExhale);
+            // REDEFINE VARIABLE TO THE OPPOSITE OF WHAT IT CURRENTLY IS
+            toggle = !toggle;
+        };
+
+        // BEGIN THE TIMER
+        timer.Start();
+
     }
 }
 //! + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
