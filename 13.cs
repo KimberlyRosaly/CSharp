@@ -39,6 +39,18 @@ using System.Timers;
 
 class Program
 {
+    static string petInhale = @"
+  _ _ _ 
+/       \
+| -   - |
+\_ _ _ _/
+";
+    static string petExhale = @"
+   _ _ _ 
+ /       \
+|  -   -  |
+ \_ _ _ _/
+";
     // 'static' > KEYWORD FOR BELONGING TO THE 'Program' CLASS ITSELF AND NOT INSTANCE
     // 'void' > RETURN TYPE > SIGNIFY THAT METHOD DOES NOT RETURN A VALUE
     // 'main' > CONVENTIONAL METHOD NAME > 1ST TO GET CALLED > APPLICATION ENTRY POINT
