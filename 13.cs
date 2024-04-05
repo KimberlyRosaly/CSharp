@@ -36,6 +36,8 @@
 // 'System' > ROOT NAMESPACE > FUNDAMENTAL & BASE CLASSES
 using System;
 using System.Timers;
+// ALLOW MULTITHREADING
+using System.Threading.Tasks;
 
 class Program
 {
@@ -58,6 +60,8 @@ class Program
     //      TAKE IN AN ARRAY OF STRINGS OF COMMAND-LINE ARGUMENTS
     static void Main(string[] args)
     {
+        // ENCAPSULATED WILL RUN ON ITS OWN THREAD > SEPERATE AND ABLE TO RUN CONCURRENTLY
+        Task.Run(() =>
         // INITIALIZE A TIMER TO BE TRIGGERED EVERY 1 SECOND
         // CLASS | STORED REFERENCE | INITIALIZATION OF INSTANCE | ARGUMENT FOR CONSTRUCTOR
         Timer timer = new Timer(1000);
@@ -73,10 +77,14 @@ class Program
             Console.WriteLine(toggle ? petInhale : petExhale);
             // REDEFINE VARIABLE TO THE OPPOSITE OF WHAT IT CURRENTLY IS
             toggle = !toggle;
-        };
+            // BEGIN THE TIMER
+            timer.Start();
+            // TIMER RUNS INFINITELY
+            while (true) { }
+        });
 
-        // BEGIN THE TIMER
-        timer.Start();
+        Console.WriteLine("HELLO, USER!");
+
 
     }
 }
