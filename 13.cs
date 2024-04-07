@@ -33,6 +33,7 @@ class Program
             {
                 // CLEAR CONSOLE FOR A BLANK SLATE TO WORK WITH
                 Console.Clear();
+                Console.WriteLine("HELLO, USER!");
                 // TERNARY - IF TOGGLE IS TRUTHY, DISPLAY LARGER FRAME, OTHERWISE DISPLAY SMALLER FRAME
                 Console.WriteLine(toggle ? petInhale : petExhale);
                 // REDEFINE VARIABLE TO THE OPPOSITE OF WHAT IT CURRENTLY IS
@@ -45,6 +46,5 @@ class Program
             while (true) { }
         });
 
-        Console.WriteLine("HELLO, USER!");
     }
 }
