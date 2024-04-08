@@ -33,7 +33,10 @@ class Program
             {
                 // CLEAR CONSOLE FOR A BLANK SLATE TO WORK WITH
                 Console.Clear();
-                Console.WriteLine("HELLO, USER!");
+                Console.WriteLine("WELCOME HOME!);
+                Console.WriteLine("MY NAME IS RIXIN!");
+                Console.WriteLine("Please, make sure I dont get too hungry!"
+                Console.WriteLine(hungerMeter);
                 // TERNARY - IF TOGGLE IS TRUTHY, DISPLAY LARGER FRAME, OTHERWISE DISPLAY SMALLER FRAME
                 Console.WriteLine(toggle ? petInhale : petExhale);
                 // REDEFINE VARIABLE TO THE OPPOSITE OF WHAT IT CURRENTLY IS
