@@ -23,17 +23,21 @@ class Program
         // (1) PROMPTS : ENCAPSULATED WILL RUN ON ITS OWN THREAD > SEPERATE AND ABLE TO RUN CONCURRENTLY
         Task.Run(() =>
         {
-                Console.WriteLine("WELCOME HOME!);
-                Console.WriteLine("MY NAME IS RIXIN!");
-                Console.WriteLine("Please, make sure I dont get too hungry!"
-        }
-        );
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("WELCOME HOME!");
+            Console.WriteLine("MY NAME IS RIXIN!");
+            Console.WriteLine("Please, make sure I dont get too hungry!");
+        });
         // (2) HUNGER : ENCAPSULATED WILL RUN ON ITS OWN THREAD > SEPERATE AND ABLE TO RUN CONCURRENTLY
-        Task.Run(() =>
+        Task.Run(async () =>
         {
-                Console.WriteLine(hungerMeter);
-        }
-        );
+            while (true)
+            {
+                Console.SetCursorPosition(0, 4);
+                Console.Write(hungerMeter);
+                await Task.Delay(1000);
+            }
+        });
 
         // (3) PET : ENCAPSULATED WILL RUN ON ITS OWN THREAD > SEPERATE AND ABLE TO RUN CONCURRENTLY
         Task.Run(() =>
@@ -48,9 +52,9 @@ class Program
             timer.Elapsed += (sender, e) =>
             {
                 // CLEAR CONSOLE FOR A BLANK SLATE TO WORK WITH
-                Console.Clear();
+                Console.SetCursorPosition(0, 6);
                 // TERNARY - IF TOGGLE IS TRUTHY, DISPLAY LARGER FRAME, OTHERWISE DISPLAY SMALLER FRAME
-                Console.WriteLine(toggle ? petInhale : petExhale);
+                Console.Write(toggle ? petInhale : petExhale);
                 // REDEFINE VARIABLE TO THE OPPOSITE OF WHAT IT CURRENTLY IS
                 toggle = !toggle;
             };
@@ -58,8 +62,10 @@ class Program
             // BEGIN THE TIMER
             timer.Start();
             // TIMER RUNS INFINITELY
-            while (true) { }
+
         });
+
+        Console.ReadLine();
 
     }
 }
