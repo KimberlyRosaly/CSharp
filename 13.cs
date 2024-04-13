@@ -15,7 +15,7 @@ class Program
  /       \
 |  -   -  |
  \_ _ _ _/
-";    static string petDead = @"
+"; static string petDead = @"
    _ _ _ 
  /       \
 |  x   X  |
@@ -75,8 +75,13 @@ class Program
                             break;
                         case 5:
                             Console.Write(hungerMeter5);
+                            lock (consoleLock)
+                            {
+                                Console.SetCursorPosition(0, 13);
+                                Console.Write("I M DED! HALP!");
+                            }
                             break;
-                            
+
                     }
                 }
                 await Task.Delay(2000);
