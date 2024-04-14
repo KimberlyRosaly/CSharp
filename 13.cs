@@ -30,6 +30,9 @@ class Program
 
     static object consoleLock = new object();
 
+    static bool alive = true;
+    static bool breathing = false;
+
     static void Main(string[] args)
     {
         // (1) PROMPTS
@@ -75,6 +78,7 @@ class Program
                             break;
                         case 5:
                             Console.Write(hungerMeter5);
+                            alive = !alive;
                             lock (consoleLock)
                             {
                                 Console.SetCursorPosition(0, 13);
@@ -92,25 +96,31 @@ class Program
         Task.Run(() =>
         {
             System.Timers.Timer timer = new System.Timers.Timer(1000);
-            bool alive = true;
-            bool breathing = false;
 
             timer.Elapsed += (sender, e) =>
             {
                 lock (consoleLock)
                 {
-                    if (!alive)
+                    Console.SetCursorPosition(0, 7);
+                    if (alive)
                     {
-                        Console.SetCursorPosition(0, 7);
-                        Console.Write(petDead);
+                        if (breathing)
+                        {
+                            Console.Write(petInhale);
+                        }
+                        else
+                        {
+                            Console.Write(petExhale);
+                        }
+                        breathing = !breathing;
                     }
                     else
                     {
                         Console.SetCursorPosition(0, 7);
-                        Console.Write(breathing ? petInhale : petExhale);
+                        Console.Write(petDead);
+                        timer.Stop();
                     };
                 };
-                breathing = !breathing;
             };
 
             timer.Start();
