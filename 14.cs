@@ -1,4 +1,6 @@
 // USE AN ARRAY
+// a fixed-size collection of elements of the same type
+string[] cats = new string[3] { "Rixin", "Harley", "Boots"}
 // USE A LIST
 // USE A DICTIONARY
 // USE A STACK
