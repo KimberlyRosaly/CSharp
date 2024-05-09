@@ -10,6 +10,7 @@ Dictionary<string, string> puppies = new Dictionary<string, string>
 };
 // USE A STACK
 // USE A LINKED LIST
+LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen", "Jess" });
 // USE A HASHSET
 // USE A QUEUE
 // USE A SORTEDSET
