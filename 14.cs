@@ -2,6 +2,7 @@
 // a fixed-size collection of elements of the same type
 string[] cats = new string[3] { "Rixin", "Harley", "Boots"};
 // USE A LIST
+List<string> hobbies = new List<string> { "art", "carpentry", "agriculture" };
 // USE A DICTIONARY
 Dictionary<string, string> puppies = new Dictionary<string, string>
 {
