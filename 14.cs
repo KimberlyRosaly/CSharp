@@ -16,4 +16,10 @@ LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen"
 // USE A QUEUE
 // USE A SORTEDSET
 // USE A SORTEDDICTIONARY
+SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
+{
+    { "Appa Banna", "Primary Care" },
+    { "Canna Dan", "Dermatology" },
+    { "Creder Fee", "Gatroenterology" }
+};
 // USE A BITARRAY
