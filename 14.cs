@@ -23,3 +23,5 @@ SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
     { "Creder Fee", "Gatroenterology" }
 };
 // USE A BITARRAY
+
+// call lists to show data with labels
