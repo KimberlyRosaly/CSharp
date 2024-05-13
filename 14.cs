@@ -25,3 +25,8 @@ SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
 // USE A BITARRAY
 
 // call lists to show data with labels
+Console.Write(cats[1]);
+Console.Write(hobbies[1]);
+Console.Write(puppies[1]);
+Console.Write(friends[1]);
+Cnosole.Write(doctors[1]);
