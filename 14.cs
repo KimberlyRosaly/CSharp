@@ -30,3 +30,17 @@ Console.Write(hobbies[1]);
 Console.Write(puppies[1]);
 Console.Write(friends[1]);
 Cnosole.Write(doctors[1]);
+
+// DISPLAY ALL DATA IN OBJECTS
+
+// DICTIONARIES NEED TO ITERATE OVER KEY VALUE PAIRS
+public static void PrintDictionaryData<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+{
+    foreach (KeyValuePair<TKey, TValue> pair in dictionary)
+    {
+        Console.WriteLine($"{pair.Key} : {pair.Value}");
+    }
+}
+
+// CALL METHOD TO PRINT ALL ITEMS IN A DICTIONARY EASILY / REUSABLE
+PrintDictionaryData(doctors);
