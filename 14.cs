@@ -44,3 +44,14 @@ public static void PrintDictionaryData<TKey, TValue>(Dictionary<TKey, TValue> di
 
 // CALL METHOD TO PRINT ALL ITEMS IN A DICTIONARY EASILY / REUSABLE
 PrintDictionaryData(doctors);
+
+// METHOD TO PLACE OBJECTS INTO TO DISPLAY
+public static void PrintObjectData<T>(IEnumerable<T> object)
+{
+    foreach (T item in object)
+    {
+        Console.WriteLine(item);
+    }
+}
+
+PrintObjectData(cats);
