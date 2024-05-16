@@ -34,11 +34,18 @@ Cnosole.Write(doctors[1]);
 // DISPLAY ALL DATA IN OBJECTS
 
 // DICTIONARIES NEED TO ITERATE OVER KEY VALUE PAIRS
-public static void PrintDictionaryData<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+public static void PrintDictionaryData(object data)
 {
-    foreach (KeyValuePair<TKey, TValue> pair in dictionary)
+    if (data is IDictionary dictionary)
     {
-        Console.WriteLine($"{pair.Key} : {pair.Value}");
+        foreach (DictionaryEntry entry in dictionary)
+        {
+            Console.WriteLine($"{entry.Key} : {entry.Value}");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Invalid data type. Expected a dictionary.");
     }
 }
 
@@ -46,12 +53,36 @@ public static void PrintDictionaryData<TKey, TValue>(Dictionary<TKey, TValue> di
 PrintDictionaryData(doctors);
 
 // METHOD TO PLACE OBJECTS INTO TO DISPLAY
-public static void PrintObjectData<T>(IEnumerable<T> object)
+public static void PrintObjectData<T>(IEnumerable<T> collection)
 {
-    foreach (T item in object)
+    if (collection is IEnumerable items)
     {
-        Console.WriteLine(item);
+        foreach (var item in items)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    else
+    {
+        Console.WriteLine("Invalid data type. Expected a collection.");
     }
 }
 
 PrintObjectData(cats);
+
+// CREATE METHOD TO TAKE IN ANY COLLECTION TYPE
+public static void PrintCollectionData(object data)
+{
+    if (data is IDictionary)
+    {
+        PrintDictionaryData(data);
+    }
+    else if (data is IEnumerable)
+    {
+        PrintObjectData(data);
+    }
+    else
+    {
+        Console.WriteLine(data);
+    }
+}
