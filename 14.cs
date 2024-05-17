@@ -53,7 +53,7 @@ public static void PrintDictionaryData(object data)
 PrintDictionaryData(doctors);
 
 // METHOD TO PLACE OBJECTS INTO TO DISPLAY
-public static void PrintObjectData<T>(IEnumerable<T> collection)
+public static void PrintObjectData(IEnumerable collection)
 {
     if (collection is IEnumerable items)
     {
@@ -70,19 +70,22 @@ public static void PrintObjectData<T>(IEnumerable<T> collection)
 
 PrintObjectData(cats);
 
-// CREATE METHOD TO TAKE IN ANY COLLECTION TYPE
-public static void PrintCollectionData(object data)
+// CREATE METHOD TO TAKE IN ANY COLLECTION TYPE, WHETHER A SINGLE OBJECT IS PASSED IN OR MULTIPLE
+public static void PrintCollectionData(params object[] dataItems)
 {
-    if (data is IDictionary)
+    foreach (var data in dataItems)
     {
-        PrintDictionaryData(data);
-    }
-    else if (data is IEnumerable)
-    {
-        PrintObjectData(data);
-    }
-    else
-    {
-        Console.WriteLine(data);
+        if (data is IDictionary)
+        {
+            PrintDictionaryData(data);
+        }
+        else if (data is IEnumerable)
+        {
+            PrintObjectData(data);
+        }
+        else
+        {
+            Console.WriteLine(data);
+        }
     }
 }
