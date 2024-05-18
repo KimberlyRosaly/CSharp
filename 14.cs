@@ -15,6 +15,12 @@ LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen"
 // USE A HASHSET
 // USE A QUEUE
 // USE A SORTEDSET
+SortedSet<DateTime> testDates = new SortedSet<DateTime>
+{
+    DateTime.Parse("January 14, 2030"),
+    DateTime.Parse("October 9, 1998"),
+    DateTime.Parse("January 10, 2000")
+};
 // USE A SORTEDDICTIONARY
 SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
 {
