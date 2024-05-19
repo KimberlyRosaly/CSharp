@@ -13,6 +13,7 @@ Dictionary<string, string> puppies = new Dictionary<string, string>
 // USE A LINKED LIST
 LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen", "Jess" });
 // USE A HASHSET
+List<string> usernames = new List<string> { "LeopardStripes", "TransAmForever", "FirebirdPhoenix", "Germinator89" };
 // USE A QUEUE
 // USE A SORTEDSET
 SortedSet<DateTime> testDates = new SortedSet<DateTime>
