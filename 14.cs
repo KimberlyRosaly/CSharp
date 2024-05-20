@@ -15,6 +15,7 @@ LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen"
 // USE A HASHSET
 List<string> usernames = new List<string> { "LeopardStripes", "TransAmForever", "FirebirdPhoenix", "Germinator89" };
 // USE A QUEUE
+Queue<string> meals = new Queue<string>(new string[] { "Breakfast", "Lunch", "Dinner" });
 // USE A SORTEDSET
 SortedSet<DateTime> testDates = new SortedSet<DateTime>
 {
