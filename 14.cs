@@ -32,7 +32,7 @@ SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
     { "Creder Fee", "Gatroenterology" }
 };
 // USE A BITARRAY
-
+BitArray featureFlags = new BitArray(new bool[] { false, false, false, true });
 // call lists to show data with labels
 Console.Write(cats[1]);
 Console.Write(hobbies[1]);
