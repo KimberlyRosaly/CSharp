@@ -15,6 +15,13 @@ Stack<string> browsingHistory = new Stack<string>(new string[] { "Home", "About"
 LinkedList<string> friends = new LinkedList<string>(new string[] { "Jane", "Jen", "Jess" });
 // USE A HASHSET
 List<string> usernames = new List<string> { "LeopardStripes", "TransAmForever", "FirebirdPhoenix", "Germinator89" };
+// USE A HASHTABLE
+Hashtable inventory = new Hashtable
+{
+    { "barrier", 20 },
+    { "washcloth", 5 },
+    { "towel", 2 }
+};
 // USE A QUEUE
 Queue<string> meals = new Queue<string>(new string[] { "Breakfast", "Lunch", "Dinner" });
 // USE A SORTEDSET
