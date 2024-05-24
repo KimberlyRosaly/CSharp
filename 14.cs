@@ -40,6 +40,15 @@ SortedDictionary<string, string> doctors = new SortedDictionary<string, string>
 };
 // USE A BITARRAY
 BitArray featureFlags = new BitArray(new bool[] { false, false, false, true });
+
+// USE A SET TO DECLARE UNIQUE VALUES
+ISet<string> entryCodes = new HashSet<string> { "0FX890", "IPASS100", "BAN00" };
+
+
+
+
+
+
 // call lists to show data with labels
 Console.Write(cats[1]);
 Console.Write(hobbies[1]);
