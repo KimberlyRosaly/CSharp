@@ -6,6 +6,27 @@
 // CREATE A USERNAME & PASSWORD & EMAIL ADDRESS
 
 
-//GREET USER AND PROVIDE INSTRUCTIONS
-//GET USER IMPUT
-//CREATE ENTRY BASED ON INPUT
+using System;
+
+class Program
+{
+    static Dictionary<string, string> accounts = new Dictionary<string, string>
+    {
+        { "username", "email address" }
+    }
+    static void Main()
+    {
+        //GREET USER AND PROVIDE INSTRUCTIONS
+        Console.WriteLine("Welcome. Please, enter your username and press [ENTER].")
+        //GET USER IMPUT
+        string username = Console.ReadLine();
+        // SEARCH EXISTING USERNAMES FOR MATCH
+        // IF NO MATCH FOUND
+        // INSTRUCT USER TO ENTER AN EMAIL ADDRESS TO ASSOCIATE WITH THEIR NEW USERNAME
+        string emailAddress = Console.ReadLine();
+        // CREATE NEW USERNAME ENTRY WITH ITS EMAIL ADDRESS
+        accounts.Add(username, emailAddress);
+        
+    }
+
+}
