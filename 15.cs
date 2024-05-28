@@ -21,11 +21,19 @@ class Program
         //GET USER IMPUT
         string username = Console.ReadLine();
         // SEARCH EXISTING USERNAMES FOR MATCH
+        if (accounts.ContainsKey(username))
+        {
+            Console.WriteLine($"Hello, {username}.")
+        } 
+        else
         // IF NO MATCH FOUND
-        // INSTRUCT USER TO ENTER AN EMAIL ADDRESS TO ASSOCIATE WITH THEIR NEW USERNAME
-        string emailAddress = Console.ReadLine();
-        // CREATE NEW USERNAME ENTRY WITH ITS EMAIL ADDRESS
-        accounts.Add(username, emailAddress);
+        {
+            // INSTRUCT USER TO ENTER AN EMAIL ADDRESS TO ASSOCIATE WITH THEIR NEW USERNAME
+            Console.WriteLine("Welcome, new user. Please, type in an email address to associate with your new account and press [ENTER].")
+            string emailAddress = Console.ReadLine();
+            // CREATE NEW USERNAME ENTRY WITH ITS EMAIL ADDRESS
+            accounts.Add(username, emailAddress);
+        }
         
     }
 
