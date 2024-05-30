@@ -43,8 +43,13 @@ class Program
         }
         else
         {
-            // ASK USER TO INPUT A USERNAME AND EMAIL ADDRES
+            // ASK USER TO INPUT A USERNAME AND EMAIL ADDRESS
+            Console.WriteLine("Please, enter username and press [ENTER]")
+            string un = Console.ReadLine();
+            Console.WriteLine("Please, enter your email address and press [ENTER]")
+            string em = Console.ReadLine();
             // GRAB ONTO VALUES
+            string emailAddress = Console.ReadLine();
             // CONFIRM AGAIN - MAKE A LOOP SOMEWHERE
         }
         
