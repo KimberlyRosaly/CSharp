@@ -36,7 +36,8 @@ class Program
         Console.WriteLine($"Please, verify your username and email address: {username} - {emailAddress}");
         Console.WriteLine("If this is correct, press [1] and the [ENTER] key. If you need to make a correction, press [2] and press [ENTER].")
         string confirmation = Console.ReadLine();
-        if (confirmation == 1)
+        int confirmationToInteger = int.Parse(confirmation);
+        if (confirmationToInteger == 1)
         {
             // CREATE NEW USERNAME ENTRY WITH ITS EMAIL ADDRESS
             accounts.Add(username, emailAddress);
