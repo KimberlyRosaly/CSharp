@@ -10,9 +10,21 @@ using System;
 
 class Program
 {
+    static Dictionary<string, string> prompts = new Dictionary<string, string>
+    {
+        { "greeting", "Welcome, user!" }
+    }
     static Dictionary<string, string> accounts = new Dictionary<string, string>
     {
         { "username", "email address" }
+    }
+    static void checkUsernameAndEmail(username, email)
+    {
+        // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
+    }
+    static void addUsernameAndEmail(username, email)
+    {
+        accounts.Add(username, email);
     }
     static void Main()
     {
