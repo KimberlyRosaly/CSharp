@@ -12,7 +12,8 @@ class Program
 {
     static Dictionary<string, string> prompts = new Dictionary<string, string>
     {
-        { "greeting", "Welcome, user!" }
+        { "greeting", "Welcome, user!" },
+        { "instructions", "Please, enter your username and press [ENTER]." }
     }
     static Dictionary<string, string> accounts = new Dictionary<string, string>
     {
