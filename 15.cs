@@ -13,15 +13,24 @@ class Program
     static Dictionary<string, string> prompts = new Dictionary<string, string>
     {
         { "greeting", "Welcome, user!" },
-        { "instructions", "Please, enter your username and press [ENTER]." }
+        { "instructions", "Please, enter your username and press [ENTER]." },
+        { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." }
     }
     static Dictionary<string, string> accounts = new Dictionary<string, string>
     {
         { "username", "email address" }
     }
-    static void checkUsernameAndEmail(username, email)
+    static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
+        if (accounts.ContainsKey(username) || accounts.ContainsValue(email))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     static void addUsernameAndEmail(username, email)
     {
