@@ -55,16 +55,28 @@ using System;
 
 class Program
 {
+    // ========================================================DICTIONARIES=
     static Dictionary<string, string> prompts = new Dictionary<string, string>
     {
         { "greeting", "Welcome, user!" },
         { "instructions", "Please, enter your username and press [ENTER]." },
         { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." }
-    }
+    };
+    // =====================================================================
+    /*
     static Dictionary<string, string> accounts = new Dictionary<string, string>
     {
         { "username", "email address" }
-    }
+    };
+    */
+    // =====================================================================
+    // ----------------------------------------------T U P L E || VALUETUPLE
+    // =====================================================================
+    static Dictionary<int, (string, string, string)> accounts = new Dictionary<int, (string, string, string)>
+    {
+        { 1, ("username", "email@ddress", "password") }
+    };
+    // =====================================================================
     static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
