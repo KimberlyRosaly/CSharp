@@ -2,7 +2,7 @@
 /*
 DICTIONARIES
     [] -PROMPTS
-    [] -USER DATA => ACCOUNT { ENTRY-INTEGER, "USERNAME", "EMAIL", "PASSWORD" }
+    [x] -USER DATA => ACCOUNT { ENTRY-INTEGER, "USERNAME", "EMAIL", "PASSWORD" }
     [] -ERROR MESSAGES
     
 [] (1) GREET USER
@@ -59,8 +59,19 @@ class Program
     static Dictionary<string, string> prompts = new Dictionary<string, string>
     {
         { "greeting", "Welcome, user!" },
-        { "instructions", "Please, enter your username and press [ENTER]." },
-        { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." }
+        { "description", "Access your account or create a new one."},
+        { "username instructions", "Please, enter your username and press [ENTER]." },
+        { "password instructions", "Please, enter your password and press [ENTER]."},
+        { "email instructions", "Please, enter your email address and press [ENTER]."},
+        { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." },
+        { "termination", }
+    };
+    static Dictionary<string, string> errors = new Dictionary<string, string>
+    {
+        { "password incorrect", "The password you have entered is incorrect. Please, try again."},
+        { "password invalid", "The password you have entered is invalid. Input must be an alphanumerical value. Please, try again."},
+        { "username prexisting", "The username you have entered has already been taken. Please, try again."},
+
     };
     // =====================================================================
     /*
