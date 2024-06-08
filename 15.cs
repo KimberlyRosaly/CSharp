@@ -64,7 +64,7 @@ class Program
         { "password instructions", "Please, enter your password and press [ENTER]."},
         { "email instructions", "Please, enter your email address and press [ENTER]."},
         { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." },
-        { "termination", }
+        { "termination", "Thank you for using this program. Goodbye." }
     };
     static Dictionary<string, string> errors = new Dictionary<string, string>
     {
