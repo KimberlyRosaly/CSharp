@@ -145,5 +145,18 @@ class Program
         }
         
     }
+    // GREETING
+    //INSTRUCTIONS
+    // AWAIT U/N
+    // CHECK MATCH
+    // IF STATEMENT
+      // IF MATCH ASK P/W
+        // IF P/W MATCH WELCOME USER
+        // ELSE LOOP FOR P/W MATCH
+      // ELSE CREATE NEW 
+        // LOOP U/N CONFIRM
+        // LOOP EMAIL CONFIRM
+        // LOOP P/W CONFIRM
+        
 
 }
