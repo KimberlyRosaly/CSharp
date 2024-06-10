@@ -146,8 +146,12 @@ class Program
         
     }
     // GREETING
+    Console.WriteLine(prompts["greeting"]);
     //INSTRUCTIONS
-    // AWAIT U/N
+    Console.WriteLine(prompts["description"]);
+    Console.WriteLine(prompts["username instructions"]);
+    // AWAIT U/N'
+    string usernameInput = Console.ReadLine();
     // CHECK MATCH
     // IF STATEMENT
       // IF MATCH ASK P/W
