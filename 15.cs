@@ -7,9 +7,9 @@ DICTIONARIES
     
 [] (1) GREET USER
 [] (2) PROVIDE INSTRUCTIONS
-[] (3) AWAIT USER INPUT (USERNAME)
-[] (4) GRAB ONTO USER INPUT (USERNAME)
-[] (5) SEARCH DICTIONARY > FIND MATCHING USERNAME > ACCOUNT ENTRY
+[X] (3) AWAIT USER INPUT (USERNAME)
+[X] (4) GRAB ONTO USER INPUT (USERNAME)
+[X] (5) SEARCH DICTIONARY > FIND MATCHING USERNAME > ACCOUNT ENTRY
     IF ACCOUNT ENTRY FOUND =>
         [] (6) PROVIDE INSTRUCTIONS
         [] (7) AWAIT USER INPUT (PASSWORD)
@@ -88,6 +88,23 @@ class Program
         { 1, ("username", "email@ddress", "password") }
     };
     // =====================================================================
+    // BOOLEAN THAT RETURNS TRUE IF A HANDED IN ARGUMENT
+    //   OF A STRING EXISTS AS THE FIRST VALUE PRESENT IN A TUPLE DICTIONARY
+    static bool ExistingUsername(string username)
+    {
+        // ITERATE THROUGH THE ACCOUNTS DICTIONARY, EACH OBJECT ENTRY REFERRED TO AS 'account'
+        foreach (var account in accounts)
+        {
+            //  COMPARE THE ITERATED SINGULAR ACCOUNT OBJECT'S 1ST VALUE WITH THE FUNCTION'S STRING PARAMETER
+            if (account.Value.Item1 == username)
+            {
+                // RETURN A TRUTHY VALUE IF A MATCH BETWEEN STRINGS OCCURS
+                return true;
+            }
+        }
+        // AFTER THE ITERATING IS COMPLETE, RETURN FALSEY SINCE NO MATCHES HAD BEEN FOUND
+        return false;
+    }
     static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
