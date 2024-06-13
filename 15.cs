@@ -170,14 +170,20 @@ class Program
     // AWAIT U/N'
     string usernameInput = Console.ReadLine();
     // CHECK MATCH
-    // IF STATEMENT
+    //   IF STATEMENT
+    if (ExistingUsername(usernameInput))
+    {
       // IF MATCH ASK P/W
         // IF P/W MATCH WELCOME USER
         // ELSE LOOP FOR P/W MATCH
+    }
+    else
+    {
       // ELSE CREATE NEW 
         // LOOP U/N CONFIRM
         // LOOP EMAIL CONFIRM
         // LOOP P/W CONFIRM
+    }
         
 
 }
