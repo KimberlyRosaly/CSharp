@@ -105,6 +105,20 @@ class Program
         // AFTER THE ITERATING IS COMPLETE, RETURN FALSEY SINCE NO MATCHES HAD BEEN FOUND
         return false;
     }
+    static bool MatchingPassword(username, password)
+    {
+        foreach (var account in accounts)
+        {
+            if (account.Value.Item1 == username)
+            {
+                if (account.Value.Item3 == password)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
