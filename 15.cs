@@ -61,8 +61,9 @@ class Program
         { "greeting", "Welcome, user!" },
         { "description", "Access your account or create a new one."},
         { "username instructions", "Please, enter your username and press [ENTER]." },
-        { "password instructions", "Please, enter your password and press [ENTER]."},
-        { "email instructions", "Please, enter your email address and press [ENTER]."},
+        { "password instructions", "Please, enter your password and press [ENTER]." },
+        { "email instructions", "Please, enter your email address and press [ENTER]." },
+        { "access granted", "Your password has been accepted. Access has been granted to your account. Welcome!" },
         { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." },
         { "termination", "Thank you for using this program. Goodbye." }
     };
@@ -184,12 +185,20 @@ class Program
     // AWAIT U/N'
     string usernameInput = Console.ReadLine();
     // CHECK MATCH
-    //   IF STATEMENT
     if (ExistingUsername(usernameInput))
     {
-      // IF MATCH ASK P/W
-        // IF P/W MATCH WELCOME USER
-        // ELSE LOOP FOR P/W MATCH
+        // IF MATCH ASK P/W
+        Console.WriteLine(prompts["password instructions"])
+        string passwordInput = Console.ReadLine();
+        if (MatchingPassword(usernameInput, passwordInput))
+        {
+            // IF P/W MATCH WELCOME USER   
+            Console.WriteLine(prompts["access granted"]);
+        }
+        else
+        {
+            // ELSE LOOP FOR FALSE P/W MATCH
+        }
     }
     else
     {
