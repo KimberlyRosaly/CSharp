@@ -65,12 +65,14 @@ class Program
         { "email instructions", "Please, enter your email address and press [ENTER]." },
         { "access granted", "Your password has been accepted. Access has been granted to your account. Welcome!" },
         { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." },
+        { "new account query", "Would you like to create a new account with the username you have entered?"},
         { "termination", "Thank you for using this program. Goodbye." }
     };
     static Dictionary<string, string> errors = new Dictionary<string, string>
     {
         { "password incorrect", "The password you have entered is incorrect. Please, try again."},
         { "password invalid", "The password you have entered is invalid. Input must be an alphanumerical value. Please, try again."},
+        { "username does not exist", "The username you have entered is not a currently existing account."},
         { "username prexisting", "The username you have entered has already been taken. Please, try again."},
 
     };
@@ -197,12 +199,16 @@ class Program
         }
         else
         {
-            // ELSE LOOP FOR FALSE P/W MATCH
+            // ELSE [TODO: LOOP IN THE FUTURE] FOR P/W MATCH RETURNING FALSE
+            Console.WriteLine(errors["password incorrect"]);
+            Console.WriteLine(prompts["termination"]);
         }
     }
     else
     {
-      // ELSE CREATE NEW 
+        // ELSE CREATE NEW 
+        Console.WriteLine(errors["username does not exist"]);
+        Console.WriteLine(prompts["new account query"]);
         // LOOP U/N CONFIRM
         // LOOP EMAIL CONFIRM
         // LOOP P/W CONFIRM
