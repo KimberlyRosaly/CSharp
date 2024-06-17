@@ -209,7 +209,20 @@ class Program
         // ELSE CREATE NEW 
         Console.WriteLine(errors["username does not exist"]);
         Console.WriteLine(prompts["new account query"]);
+        string confirmationInput = Console.ReadLine();
         // LOOP U/N CONFIRM
+        if (confirmationInput == "1")
+        {
+            // COUNT ENTRIES IN ACCOUNTS FOR KEY
+            // +1 TOTAL COUNT = KEY
+            // ASK USER FOR EMAIL ADDRESS
+            // ASK USER FOR PASSWORD
+            // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
+        }
+        else
+        {
+            // END PROGRAM
+        }
         // LOOP EMAIL CONFIRM
         // LOOP P/W CONFIRM
     }
