@@ -214,10 +214,15 @@ class Program
         if (confirmationInput == "1")
         {
             // COUNT ENTRIES IN ACCOUNTS FOR KEY
+            int accountsCount = accounts.Count;
             // +1 TOTAL COUNT = KEY
+            int newKey = accountsCount + 1
             // ASK USER FOR EMAIL ADDRESS
+            string newEmailInput = Console.ReadLine();
             // ASK USER FOR PASSWORD
+            string newPasswordInput = Console.ReadLine();
             // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
+            newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
         }
         else
         {
