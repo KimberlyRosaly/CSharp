@@ -138,6 +138,10 @@ class Program
     {
         accounts.Add(username, email);
     }
+    static void newAccount(key, username, email, password)
+    {
+        accounts.Add(key, (username, email, password));
+    }
     static void Main()
     {
         //GREET USER AND PROVIDE INSTRUCTIONS
@@ -216,7 +220,7 @@ class Program
             // COUNT ENTRIES IN ACCOUNTS FOR KEY
             int accountsCount = accounts.Count;
             // +1 TOTAL COUNT = KEY
-            int newKey = accountsCount + 1
+            int newKey = accountsCount + 1;
             // ASK USER FOR EMAIL ADDRESS
             string newEmailInput = Console.ReadLine();
             // ASK USER FOR PASSWORD
