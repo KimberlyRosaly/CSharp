@@ -65,7 +65,7 @@ class Program
         { "email instructions", "Please, enter your email address and press [ENTER]." },
         { "access granted", "Your password has been accepted. Access has been granted to your account. Welcome!" },
         { "confirmation", "Please, confirm your entries. If the following is correct, press [1]. If you need to make changes, press [2]. Press [ENTER] to proceed." },
-        { "new account query", "Would you like to create a new account with the username you have entered?"},
+        { "new account query", "Would you like to create a new account with the username you have entered? Press [1] to confirm. Press [2] to reject. Use the [ENTER] key to proceed."},
         { "termination", "Thank you for using this program. Goodbye." }
     };
     static Dictionary<string, string> errors = new Dictionary<string, string>
@@ -222,8 +222,10 @@ class Program
             // +1 TOTAL COUNT = KEY
             int newKey = accountsCount + 1;
             // ASK USER FOR EMAIL ADDRESS
+            prompts["email instructions"];
             string newEmailInput = Console.ReadLine();
             // ASK USER FOR PASSWORD
+            prompts["password instructions"];
             string newPasswordInput = Console.ReadLine();
             // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
             newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
@@ -231,6 +233,7 @@ class Program
         else
         {
             // END PROGRAM
+            Console.WriteLine(prompts["termination"]);
         }
         // LOOP EMAIL CONFIRM
         // LOOP P/W CONFIRM
