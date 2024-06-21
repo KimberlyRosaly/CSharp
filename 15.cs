@@ -122,6 +122,30 @@ class Program
         }
         return false;
     }
+    static bool AuthenticateUser(string username)
+{
+    int attempts = 3;
+    while (attempts > 0)
+    {
+        Console.WriteLine("Please enter your password:");
+        string passwordInput = Console.ReadLine();
+
+        if (MatchingPassword(username, passwordInput))
+        {
+            // Password is correct, return true to indicate successful authentication
+            return true;
+        }
+        else
+        {
+            // Password is incorrect, decrement the attempts counter and display an error message
+            attempts--;
+            Console.WriteLine("Incorrect password. You have " + attempts + " attempts left.");
+        }
+    }
+
+    // If the user has used up all attempts, return false to indicate failed authentication
+    return false;
+}
     static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
