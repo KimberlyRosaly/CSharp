@@ -127,7 +127,7 @@ class Program
     int attempts = 3;
     while (attempts > 0)
     {
-        Console.WriteLine("Please enter your password:");
+        Console.WriteLine(prompts["password instructions"]);
         string passwordInput = Console.ReadLine();
 
         if (MatchingPassword(username, passwordInput))
@@ -139,7 +139,8 @@ class Program
         {
             // Password is incorrect, decrement the attempts counter and display an error message
             attempts--;
-            Console.WriteLine("Incorrect password. You have " + attempts + " attempts left.");
+            Console.WriteLine(errors["password incorrect"])
+            Console.WriteLine("You have " + attempts + " attempts remaining.");
         }
     }
 
@@ -217,17 +218,14 @@ class Program
     // CHECK MATCH
     if (ExistingUsername(usernameInput))
     {
-        // IF MATCH ASK P/W
-        Console.WriteLine(prompts["password instructions"])
-        string passwordInput = Console.ReadLine();
-        if (MatchingPassword(usernameInput, passwordInput))
+        if (AuthenticateUser(usernameInput))
         {
             // IF P/W MATCH WELCOME USER   
             Console.WriteLine(prompts["access granted"]);
         }
         else
         {
-            // ELSE [TODO: LOOP IN THE FUTURE] FOR P/W MATCH RETURNING FALSE
+            // ELSE FOR P/W MATCH RETURNING FALSE
             Console.WriteLine(errors["password incorrect"]);
             Console.WriteLine(prompts["termination"]);
         }
