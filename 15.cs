@@ -77,12 +77,6 @@ class Program
 
     };
     // =====================================================================
-    /*
-    static Dictionary<string, string> accounts = new Dictionary<string, string>
-    {
-        { "username", "email address" }
-    };
-    */
     // =====================================================================
     // ----------------------------------------------T U P L E || VALUETUPLE
     // =====================================================================
@@ -123,30 +117,30 @@ class Program
         return false;
     }
     static bool AuthenticateUser(string username)
-{
-    int attempts = 3;
-    while (attempts > 0)
     {
-        Console.WriteLine(prompts["password instructions"]);
-        string passwordInput = Console.ReadLine();
+        int attempts = 3;
+        while (attempts > 0)
+        {
+            Console.WriteLine(prompts["password instructions"]);
+            string passwordInput = Console.ReadLine();
 
-        if (MatchingPassword(username, passwordInput))
-        {
-            // Password is correct, return true to indicate successful authentication
-            return true;
+            if (MatchingPassword(username, passwordInput))
+            {
+                // Password is correct, return true to indicate successful authentication
+                return true;
+            }
+            else
+            {
+                // Password is incorrect, decrement the attempts counter and display an error message
+                attempts--;
+                Console.WriteLine(errors["password incorrect"])
+                Console.WriteLine("You have " + attempts + " attempts remaining.");
+            }
         }
-        else
-        {
-            // Password is incorrect, decrement the attempts counter and display an error message
-            attempts--;
-            Console.WriteLine(errors["password incorrect"])
-            Console.WriteLine("You have " + attempts + " attempts remaining.");
-        }
+
+        // If the user has used up all attempts, return false to indicate failed authentication
+        return false;
     }
-
-    // If the user has used up all attempts, return false to indicate failed authentication
-    return false;
-}
     static bool ExistingUsernameOrEmail(string username, string email)
     {
         // CHECK IF USERNAME AND EMAIL ADDRESS ENTRIES EXIST IN DICTIONARIES
@@ -169,97 +163,58 @@ class Program
     }
     static void Main()
     {
-        //GREET USER AND PROVIDE INSTRUCTIONS
-        Console.WriteLine("Welcome. Please, enter your username and press [ENTER].")
-        //GET USER IMPUT
-        string username = Console.ReadLine();
-        // SEARCH EXISTING USERNAMES FOR MATCH
-        if (accounts.ContainsKey(username))
+        // GREETING
+        Console.WriteLine(prompts["greeting"]);
+        //INSTRUCTIONS
+        Console.WriteLine(prompts["description"]);
+        Console.WriteLine(prompts["username instructions"]);
+        // AWAIT U/N'
+        string usernameInput = Console.ReadLine();
+        // CHECK MATCH
+        if (ExistingUsername(usernameInput))
         {
-            Console.WriteLine($"Hello, {username}.")
-        } 
-        else
-        // IF NO MATCH FOUND
-        {
-            // INSTRUCT USER TO ENTER AN EMAIL ADDRESS TO ASSOCIATE WITH THEIR NEW USERNAME
-            Console.WriteLine("Welcome, new user. Please, type in an email address to associate with your new account and press [ENTER].")
-            string emailAddress = Console.ReadLine();
-        }
-        // CONFIRM USERNAME AND EMAIL ADDRESS WITH THE USER
-        Console.WriteLine($"Please, verify your username and email address: {username} - {emailAddress}");
-        Console.WriteLine("If this is correct, press [1] and the [ENTER] key. If you need to make a correction, press [2] and press [ENTER].")
-        string confirmation = Console.ReadLine();
-        int confirmationToInteger = int.Parse(confirmation);
-        if (confirmationToInteger == 1)
-        {
-            // CREATE NEW USERNAME ENTRY WITH ITS EMAIL ADDRESS
-            accounts.Add(username, emailAddress);
+            if (AuthenticateUser(usernameInput))
+            {
+                // IF P/W MATCH WELCOME USER   
+                Console.WriteLine(prompts["access granted"]);
+            }
+            else
+            {
+                // ELSE FOR P/W MATCH RETURNING FALSE
+                Console.WriteLine(errors["password incorrect"]);
+                Console.WriteLine(prompts["termination"]);
+            }
         }
         else
         {
-            // ASK USER TO INPUT A USERNAME AND EMAIL ADDRESS
-            Console.WriteLine("Please, enter username and press [ENTER]")
-            string un = Console.ReadLine();
-            Console.WriteLine("Please, enter your email address and press [ENTER]")
-            string em = Console.ReadLine();
-            // GRAB ONTO VALUES
-            string emailAddress = Console.ReadLine();
-            // CONFIRM AGAIN - MAKE A LOOP SOMEWHERE
+            // ELSE CREATE NEW 
+            Console.WriteLine(errors["username does not exist"]);
+            Console.WriteLine(prompts["new account query"]);
+            string confirmationInput = Console.ReadLine();
+            // LOOP U/N CONFIRM
+            if (confirmationInput == "1")
+            {
+                // COUNT ENTRIES IN ACCOUNTS FOR KEY
+                int accountsCount = accounts.Count;
+                // +1 TOTAL COUNT = KEY
+                int newKey = accountsCount + 1;
+                // ASK USER FOR EMAIL ADDRESS
+                prompts["email instructions"];
+                string newEmailInput = Console.ReadLine();
+                // ASK USER FOR PASSWORD
+                prompts["password instructions"];
+                string newPasswordInput = Console.ReadLine();
+                // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
+                newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
+            }
+            else
+            {
+                // END PROGRAM
+                Console.WriteLine(prompts["termination"]);
+            }
+            // LOOP EMAIL CONFIRM
+            // LOOP P/W CONFIRM
         }
-        
+            
     }
-    // GREETING
-    Console.WriteLine(prompts["greeting"]);
-    //INSTRUCTIONS
-    Console.WriteLine(prompts["description"]);
-    Console.WriteLine(prompts["username instructions"]);
-    // AWAIT U/N'
-    string usernameInput = Console.ReadLine();
-    // CHECK MATCH
-    if (ExistingUsername(usernameInput))
-    {
-        if (AuthenticateUser(usernameInput))
-        {
-            // IF P/W MATCH WELCOME USER   
-            Console.WriteLine(prompts["access granted"]);
-        }
-        else
-        {
-            // ELSE FOR P/W MATCH RETURNING FALSE
-            Console.WriteLine(errors["password incorrect"]);
-            Console.WriteLine(prompts["termination"]);
-        }
-    }
-    else
-    {
-        // ELSE CREATE NEW 
-        Console.WriteLine(errors["username does not exist"]);
-        Console.WriteLine(prompts["new account query"]);
-        string confirmationInput = Console.ReadLine();
-        // LOOP U/N CONFIRM
-        if (confirmationInput == "1")
-        {
-            // COUNT ENTRIES IN ACCOUNTS FOR KEY
-            int accountsCount = accounts.Count;
-            // +1 TOTAL COUNT = KEY
-            int newKey = accountsCount + 1;
-            // ASK USER FOR EMAIL ADDRESS
-            prompts["email instructions"];
-            string newEmailInput = Console.ReadLine();
-            // ASK USER FOR PASSWORD
-            prompts["password instructions"];
-            string newPasswordInput = Console.ReadLine();
-            // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
-            newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
-        }
-        else
-        {
-            // END PROGRAM
-            Console.WriteLine(prompts["termination"]);
-        }
-        // LOOP EMAIL CONFIRM
-        // LOOP P/W CONFIRM
-    }
-        
-
 }
