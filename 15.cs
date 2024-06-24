@@ -161,6 +161,25 @@ class Program
     {
         accounts.Add(key, (username, email, password));
     }
+    static void confirmation(credentialInput, credentialType)
+    {
+        /*
+        Please, confirm your entry.
+        CREDENTIAL TYPE : CREDENTIAL INPUT STRING INTERPOLATION
+        Press [1] to confirm. Press [2] to reject. 
+        Press the [ENTER] key to proceed.
+
+            [1] C O N F I R M E D
+                RETURN CONFIRMED STRING, RETURN SPECIFIED CREDENTIAL TO LINK IT TO
+            [2] R E J E C T E D
+                ASK USER FOR STRING FOR SPECIFIED CREDENTIAL
+                Please, enter your username || password || email. Press [ENTER] to proceed.
+                GRAB RESPONSE
+                LOOP BACK TO THE BEGINNING OF THE FUNCTION
+
+        => RETURN CONFIRMED ENTRY STRING
+        */
+    }
     static void Main()
     {
         // GREETING
