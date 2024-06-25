@@ -163,22 +163,33 @@ class Program
     }
     static void confirmation(credentialInput, credentialType)
     {
-        /*
-        Please, confirm your entry.
-        CREDENTIAL TYPE : CREDENTIAL INPUT STRING INTERPOLATION
-        Press [1] to confirm. Press [2] to reject. 
-        Press the [ENTER] key to proceed.
+        // Please, confirm your entry.
+        Console.WriteLine("PLease, confirm your entry.");
+        // CREDENTIAL TYPE : CREDENTIAL INPUT STRING INTERPOLATION
+        Console.WriteLine($"{credentialType} : {credentialInput}");
+        // Press [1] to confirm. Press [2] to reject. 
+        Console.WriteLine("Press [1] to confirm. Press [2] to reject.");
+        // Press the [ENTER] key to proceed.
+        Console.WriteLine("Press the [ENTER] key to proceed.");
+        string userResponse = Console.ReadLine();
+        if (userResponse == "1")
+        {
+            // [1] C O N F I R M E D
+            return credentialInput;
+            // => RETURN CONFIRMED CREDENTIAL INPUT 
+        }
+        else (userResponse == "2")
+        {
+            // [2] R E J E C T E D
+            // ASK USER FOR STRING FOR SPECIFIED CREDENTIAL
+            // Please, enter your username || password || email. Press [ENTER] to proceed.
+            Console.WriteLine($"Please, enter your {credentialType}.");
+            Console.WriteLine("Press the [ENTER] key to proceed.");
+            // GRAB RESPONSE
+            string updatedCredentialInput = Console.ReadLine();
+            // LOOP BACK TO THE BEGINNING OF THE FUNCTION
+        }
 
-            [1] C O N F I R M E D
-                RETURN CONFIRMED STRING, RETURN SPECIFIED CREDENTIAL TO LINK IT TO
-            [2] R E J E C T E D
-                ASK USER FOR STRING FOR SPECIFIED CREDENTIAL
-                Please, enter your username || password || email. Press [ENTER] to proceed.
-                GRAB RESPONSE
-                LOOP BACK TO THE BEGINNING OF THE FUNCTION
-
-        => RETURN CONFIRMED ENTRY STRING
-        */
     }
     static void Main()
     {
