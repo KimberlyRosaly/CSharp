@@ -232,10 +232,10 @@ class Program
                 // +1 TOTAL COUNT = KEY
                 int newKey = accountsCount + 1;
                 // ASK USER FOR EMAIL ADDRESS
-                prompts["email instructions"];
+                Console.WriteLine(prompts["email instructions"]);
                 string newEmailInput = Console.ReadLine();
                 // ASK USER FOR PASSWORD
-                prompts["password instructions"];
+                Console.WriteLine(prompts["password instructions"]);
                 string newPasswordInput = Console.ReadLine();
                 // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
                 newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
