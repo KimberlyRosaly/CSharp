@@ -234,9 +234,11 @@ class Program
                 // ASK USER FOR EMAIL ADDRESS
                 Console.WriteLine(prompts["email instructions"]);
                 string newEmailInput = Console.ReadLine();
+                string newEmailInput = confirmation(newEmailInput, "EMAIL ADDRESS");
                 // ASK USER FOR PASSWORD
                 Console.WriteLine(prompts["password instructions"]);
                 string newPasswordInput = Console.ReadLine();
+                string newPasswordInput = confirmation(newPasswordInput, "PASSWORD");
                 // CREATE NEW ACCOUNT WITH KEY, USERNAME, EMAIL ADDRESS, AND PASSWORD
                 newAccount(newKey, usernameInput, newEmailInput, newPasswordInput);
             }
