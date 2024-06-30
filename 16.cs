@@ -15,3 +15,14 @@ OPEN-METEO FORECAST API | OPEN-SOURCE - FREE
 // -SUNRISE
 
 // CHALLENGE: DETERMINE IDEAL BOATING CONDITIONS
+
+// ====================EXPLORE API SNIPPET
+var client = new HttpClient();
+
+var request = new HttpRequestMessage(HttpMethod.Get, "API URL HERE");
+
+var response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode(); // Throw an exception if error
+ 
+var body = await response.ReadAsStringAsync();
+//==========================================
