@@ -26,3 +26,5 @@ response.EnsureSuccessStatusCode(); // Throw an exception if error
  
 var body = await response.ReadAsStringAsync();
 //==========================================
+
+dynamic data = JsonConvert.DeserializedObject(body);
