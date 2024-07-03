@@ -28,3 +28,5 @@ var body = await response.ReadAsStringAsync();
 //==========================================
 
 dynamic data = JsonConvert.DeserializedObject(body);
+
+var temp = data.current.temperature_2m;
