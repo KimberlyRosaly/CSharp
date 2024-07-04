@@ -29,4 +29,25 @@ var body = await response.ReadAsStringAsync();
 
 dynamic data = JsonConvert.DeserializedObject(body);
 
-var temp = data.current.temperature_2m;
+var temperature = data.current.temperature_2m;
+var windSpeed = data.current.wind_speed_10m;
+var windGusts = data.current.wind_gusts_10m;
+var sunrise = data.daily.sunrise[0];
+var sunset = data.daily.sunset[0];
+
+// API DOES NOT INCLUDE MOON PHASE
+// LET'S CONSIDER SCRAPING A WEB PAGE TO GET THE MOON PHASE
+using System.Net.Http;
+using HtmlAgilityPack;
+// ===============EXPLORE SCRAPING SNIPPET
+var url = "https://example.com";
+var httpClient = new HttpClient();
+var html = await httpClient.GetStringAsync(url);
+
+var htmlDocument = new HtmlDocument();
+htmlDocument.LoadHtml(html);
+
+// Example: Extracting the title of the page
+var titleNode = htmlDocument.DocumentNode.SelectSingleNode("//head/title");
+Console.WriteLine("Page Title: " + titleNode.InnerText)
+// =====================================
