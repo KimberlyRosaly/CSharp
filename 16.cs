@@ -38,16 +38,24 @@ var sunset = data.daily.sunset[0];
 // API DOES NOT INCLUDE MOON PHASE
 // LET'S CONSIDER SCRAPING A WEB PAGE TO GET THE MOON PHASE
 using System.Net.Http;
+// USING STATEMENT FOR ESSENTIAL WEB SCRAPING FUNTIONALITY (LIBRARIES)
 using HtmlAgilityPack;
 // ===============EXPLORE SCRAPING SNIPPET
+// GRAB THE URL OF THE WEB PAGE INTENDED TO SCRAPE DATA FROM
 var url = "https://example.com";
+// INITIALIZE A NEW INSTANCE OF THE HTTP PROTOCOLS TO UTILIZE SCRAPING 
 var httpClient = new HttpClient();
+// GRAB ONTO THE HMTL REQUEST RESPONSE CONTAINING ALL THE DATA ON THE WEB PAGE
 var html = await httpClient.GetStringAsync(url);
-
+// CREATE A NEW PAGE TO ISOLATE DATA 
 var htmlDocument = new HtmlDocument();
+// LOAD THE THE HTML ONTO THE NEW DOCUMENT OBJECT MODEL
 htmlDocument.LoadHtml(html);
 
 // Example: Extracting the title of the page
 var titleNode = htmlDocument.DocumentNode.SelectSingleNode("//head/title");
+// TODO: FIND THE NODE THAT CONTAINS THE MOON PHASE
+// SAVE IN VAR VARIABLE
+// PRINT TO CONSOLE THE .INNERTEXT "STRING" OF THE CAPTURED NODE
 Console.WriteLine("Page Title: " + titleNode.InnerText)
 // =====================================
