@@ -42,7 +42,7 @@ using System.Net.Http;
 using HtmlAgilityPack;
 // ===============EXPLORE SCRAPING SNIPPET
 // GRAB THE URL OF THE WEB PAGE INTENDED TO SCRAPE DATA FROM
-var url = "https://example.com";
+var url = "https://www.moongiant.com/phase/today/";
 // INITIALIZE A NEW INSTANCE OF THE HTTP PROTOCOLS TO UTILIZE SCRAPING 
 var httpClient = new HttpClient();
 // GRAB ONTO THE HMTL REQUEST RESPONSE CONTAINING ALL THE DATA ON THE WEB PAGE
