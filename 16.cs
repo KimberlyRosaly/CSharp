@@ -52,10 +52,9 @@ var htmlDocument = new HtmlDocument();
 // LOAD THE THE HTML ONTO THE NEW DOCUMENT OBJECT MODEL
 htmlDocument.LoadHtml(html);
 
-// Example: Extracting the title of the page
-var titleNode = htmlDocument.DocumentNode.SelectSingleNode("//head/title");
 // TODO: FIND THE NODE THAT CONTAINS THE MOON PHASE
+var moonPhaseNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id='moonDetails']/span[1]");
 // SAVE IN VAR VARIABLE
 // PRINT TO CONSOLE THE .INNERTEXT "STRING" OF THE CAPTURED NODE
-Console.WriteLine("Page Title: " + titleNode.InnerText)
+Console.WriteLine("Moon Phase : " + moonPhaseNode.InnerText)
 // =====================================
