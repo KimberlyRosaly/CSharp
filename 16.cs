@@ -55,5 +55,11 @@ htmlDocument.LoadHtml(html);
 var moonPhaseNode = htmlDocument.DocumentNode.SelectSingleNode("//*[@id='moonDetails']/span[1]");
 // SAVE IN VAR VARIABLE
 // PRINT TO CONSOLE THE .INNERTEXT "STRING" OF THE CAPTURED NODE
-Console.WriteLine("Moon Phase : " + moonPhaseNode.InnerText)
+Console.WriteLine("Temperature : " + temperature);
+Console.WriteLine("Wind Speed : " + windSpeed);
+Console.WriteLine("Wind Gusts : " + windGusts);
+Console.WriteLine("Sunrise : " + sunrise);
+Console.WriteLine("Sunset : " + sunset);
+Console.WriteLine("Moon Phase : " + moonPhaseNode.InnerText);
+
 // =====================================
