@@ -54,7 +54,10 @@ class Program
         Console.WriteLine("Wind Gusts : " + windGusts);
         Console.WriteLine("Sunrise : " + sunrise);
         Console.WriteLine("Sunset : " + sunset);
-        Console.WriteLine("Moon Phase : " + moonPhaseNode.InnerText);
+        if (moonPhaseNode != null)
+        {
+            Console.WriteLine("Moon Phase : " + moonPhaseNode.InnerText);
+        }
 
         // =====================================
     }
