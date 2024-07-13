@@ -21,3 +21,53 @@
 
 // IDEA : HORROR GAME - PLANT SPROUTS STRANGE EXTREMETIES - EYEBALLS, MOUTHS, TEETH, CLAWS, DEVIL TAILS
 // STRETCH GOAL : EXTREMETIES MOVE - EYEBALLS BLINK, MOUTHS SMILE, TEETH GLEAMS, CLAWS WAVE, TAILS WAG
+
+{
+    {"title", "Botanical Guardian"},
+    {"", "A roleplaying game & garden simulator"},
+
+    {"", "Please, type in your username and press the [ENTER] key."},
+    {"", "Please, type in your password and press the [ENTER] key."},
+    {"", "ACCESS DENIED"},
+    {"", "ACCESS GRANTED"},
+
+    {"", "Welcome to your garden."},
+
+    {"", "D A Y (1) : seed"},
+    {"", "D A Y (2) : seedling"},
+    {"", "D A Y (3) : bud"},
+    {"", "D A Y (4) : stem & leaves"},
+    {"", "D A Y (5) : plant"},
+
+    {"", "Would you like to water your plant?"},
+    {"", "Would you like to talk to your plant?"},
+    {"", "Would you like to sing to your plant?"},
+    {"", "Would you like to name your plant?"},
+    {"", "Would you like to fertilize your plant?"}
+}
+// ============================== E X A M P L E  USER OBJECT
+{ 1, "USERNAME", "PASSWORD", "USER'S PREFERRED NAME", "PLANT NAME", "PLANT DATE AND TIME OF BIRTH", "PLANT IS 0 DAYS OLD", "PLANT STATUS KEYWORDS"}
+
+// ============================== PLANT S T A T U S  K E Y W O R D S
+/*
+"DRY" => plant needs to be watered to progress to next day
+"MALNOURISHED" => plant needs to be fertilized to progress to next day
+*/
+// ============================== M E T H O D S
+static void AuthenticateUser()
+{
+    // HANDLE USERNAME
+    // HANDLE PASSWORD
+    // ASSIGN PROPER USER OBJECT TO PROGRAM
+};
+
+static void CurrentDateAndTime()
+{
+    // GRAB THE CURRENT MONTH, DAY, AND YEAR
+    // GRAB THE CURRENT TIME
+};
+
+static void DetermineCurrentPlantStage()
+{
+    // CALCULATE THE PLANT'S CURRENT STAGE (DAY)
+};
