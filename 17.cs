@@ -63,8 +63,16 @@ static void AuthenticateUser()
 
 static void CurrentDateAndTime()
 {
-    // GRAB THE CURRENT MONTH, DAY, AND YEAR
-    // GRAB THE CURRENT TIME
+    // GRAB THE CURRENT DATE & TIME
+    DateTime now = DateTime.Now;
+    // PARSE FOR THE MONTH
+    int month = now.Month;
+    // PARSE FOR THE DAY
+    int day = now.Day;
+    // PARSE FOR THE YEAR
+    int year = now.Year;
+    // PARSE FOR THE TIME (MILITARY FORMAT)
+    string time = now.ToString("HH:mm:ss")    
 };
 
 static void DetermineCurrentPlantStage()
