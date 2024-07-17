@@ -22,6 +22,55 @@
 // IDEA : HORROR GAME - PLANT SPROUTS STRANGE EXTREMETIES - EYEBALLS, MOUTHS, TEETH, CLAWS, DEVIL TAILS
 // STRETCH GOAL : EXTREMETIES MOVE - EYEBALLS BLINK, MOUTHS SMILE, TEETH GLEAMS, CLAWS WAVE, TAILS WAG
 
+string gameTitle = @"
+  __    _,   ___,  _    ,  ,  ___,   _,  _     ,     
+ '|_)  / \, ' |   '|\   |\ | ' |    /   '|\    |     
+ _|_) '\_/    |    |-\  |'\|  _|_, '\_   |-\  '|__   
+'      '      '    '  ` '  ` '        `  '  `    '   
+                                                     
+        _,   ,  ,  _     ,_     ,_   ___,  _    ,  , 
+       / _   |  | '|\    |_)    | \,' |   '|\   |\ | 
+      '\_|` '\__|  |-\  '| \   _|_/  _|_,  |-\  |'\| 
+        _|      `  '  `  '  ` '     '      '  ` '  ` 
+       '                                             
+";
+string accessGrantedArt = @"
+ ______________________________
+|                              |
+|  A C C E S S  G R A N T E D  |
+|______________________________|
+";
+string accessDeniedArt = @"
+ ______________________________
+|                              |
+|   A C C E S S  D E N I E D   |
+|______________________________|
+";
+string thirstArt = @"
+ _________________
+|                 |
+|   T H I R S T   |
+|_________________|
+";
+string hungerArt = @"
+ _________________
+|                 |
+|   H U N G E R   |
+|_________________|
+";
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
     {"title", "Botanical Guardian"},
     {"", "A roleplaying game & garden simulator"},
