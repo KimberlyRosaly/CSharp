@@ -28,12 +28,13 @@ string gameTitle = @"
  _|_) '\_/    |    |-\  |'\|  _|_, '\_   |-\  '|__   
 '      '      '    '  ` '  ` '        `  '  `    '   
                                                      
-        _,   ,  ,  _     ,_     ,_   ___,  _    ,  , 
-       / _   |  | '|\    |_)    | \,' |   '|\   |\ | 
-      '\_|` '\__|  |-\  '| \   _|_/  _|_,  |-\  |'\| 
-        _|      `  '  `  '  ` '     '      '  ` '  ` 
-       '                                             
+   |      _,   ,  ,  _     ,_     ,_   ___,  _    ,  , 
+  \|/    / _   |  | '|\    |_)    | \,' |   '|\   |\ | 
+ \\|//  '\_|` '\__|  |-\  '| \   _|_/  _|_,  |-\  |'\| 
+ \ - /    _|      `  '  `  '  ` '     '      '  ` '  ` 
+         '                                             
 ";
+
 string accessGrantedArt = @"
  ______________________________
 |                              |
@@ -58,18 +59,6 @@ string hungerArt = @"
 |   H U N G E R   |
 |_________________|
 ";
-
-
-
-
-
-
-
-
-
-
-
-
 
 {
     {"title", "Botanical Guardian"},
@@ -135,3 +124,37 @@ static void DetermineCurrentPlantStage()
     // EACH 24 HOURS ELAPSED = 1 DAY STAGE
     // RETURN DAY(S)
 };
+
+
+// ========================================================PROGRAM
+class Program
+{
+    static async Task Main(string[] args)
+    {
+    /*
+        DISPLAY TITLE OF PROGRAM
+            Botanical Guardian
+        DISPLAY ONE-LINER
+            A Role-Playing & Garden Simulator
+        LOG USER IN`
+            Please, enter your username & press the [ENTER] key
+            Please, enter your password & press the [ENTER] key
+        DISPLAY GREETING
+            Welcome home, USER_NICKNAME.
+        DISPLAY PLANT ART
+            |--(_.>
+        DISPLAY PLANT AGE
+            Your plant is (1) day old.
+        DISPLAY PLANT STATUSES
+            Your plant is (thirsty).
+            Your plant is (malnourished).
+            Your plant is (wilting).
+        DISPLAY MENU OF ACTIONS
+            [1] - [FEED] [2] - [WATER] [3] - [ADJUST LIGHTING]
+        IF USER SELECTS FEED
+            [1] - [Feed your plant with organic plant-based fertilizer] => (cannibalism path) (mouth, teeth)
+            [2] - [Feed your plant with animal-based fertilizer] => (carnivore path) (claws, eyes)
+            [3] - [Feed your plant with blood-based fertilizer] => (dark path) (devil tails, spikes)
+    */
+    }
+}
