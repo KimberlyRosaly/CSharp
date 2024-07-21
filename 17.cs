@@ -146,6 +146,35 @@ static void DetermineCurrentPlantStage()
     // RETURN DAY(S)
 };
 
+static void DashboardDisplay()
+{
+    // DISPLAY GROWTH STAGE : "Growth : Day (1)"
+    // DISPLAY PLANT ART : <_-)) *^ +...)
+        // COLOR ART GREEN
+    // DISPLAY ACTION BUTTONS : [BUTTON NAME] [BUTTON NAME 2] [BUTTON NAME 3]
+    // DISPLAY BRIEF INSTRUCTIONS : "Perform an action? Input and enter.
+}
+
+static void DisplayPlantArt(artworkKey)
+{
+    // PLANT ART STRING 
+        // ART COLORED GREEN
+}
+
+static void DisplayPlantGrowthStage()
+{
+    //  INTERPOLATE INTO:
+        // GROWTH : DAY (X)"
+        // COLOR INTEGER GREEN
+}
+
+static void DisplayActionButtons()
+{
+    // GRAB AHOLD OF USER OBJECT PLANT DATA
+    // DETERMINE WHAT ACTIONS TO DISPLAY
+    // DISPLAY ACTION CHOICES ON THE SAME LINE
+}
+
 
 // ========================================================PROGRAM
 class Program
